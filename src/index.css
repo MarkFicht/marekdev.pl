@@ -13,15 +13,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
-h1 {
-  color: tomato;
-  text-align: center;
-  margin: 15px 0; }
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #FFA494; }
 
 footer {
   color: tomato;
@@ -29,9 +30,77 @@ footer {
   font-weight: bold;
   margin: 15px 0; }
 
+.nav {
+  position: relative;
+  width: 100vw;
+  height: 80px;
+  left: 0;
+  top: 0;
+  background-color: #FFBF47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .nav h1 {
+    margin-left: 30px;
+    color: tomato;
+    letter-spacing: 1px; }
+  .nav > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    width: 100px;
+    height: 60px;
+    background: transparent;
+    border: none; }
+    .nav > button > span {
+      width: 20px;
+      height: 20px;
+      display: block;
+      background-color: tomato;
+      border: 3px solid tomato;
+      border-radius: 50%;
+      position: relative; }
+      .nav > button > span::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: tomato;
+        display: block;
+        border: 3px solid tomato;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-3px, -3px);
+        left: -30px; }
+      .nav > button > span::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        display: block;
+        border: 3px solid tomato;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-3px, -3px);
+        left: 30px; }
+  .nav > ul {
+    list-style-type: none;
+    display: none; }
+    .nav > ul > li {
+      padding: 3px 15px;
+      border-right: 2px solid tomato; }
+    .nav > ul > li:last-child {
+      padding-right: 30px;
+      border-right: none; }
+    .nav > ul > li > button {
+      background-color: transparent;
+      border: none;
+      color: tomato;
+      font-size: 22px;
+      font-weight: 600; }
+
 .container {
-  margin: 0 auto;
-  background-color: #cfcfcf; }
+  margin: 0 auto; }
 
 .grid-item {
   background-color: tomato;
@@ -50,7 +119,7 @@ footer {
   display: none;
   font-size: 24px;
   font-weight: bold;
-  color: #cfcfcf; }
+  color: #FFBF47; }
 
 .grid-item-1,
 .grid-item-3,
@@ -109,10 +178,17 @@ footer {
     grid-row: 4; } }
 
 @media (min-width: 1024px) {
+  .nav > button {
+    display: none; }
+  .nav h1 {
+    margin-left: 50px; }
+  .nav > ul {
+    display: flex; }
+    .nav > ul > li:last-child {
+      padding-right: 50px; }
   .container {
     max-width: 1000px; }
   .grid {
-    padding: 4px;
     grid-template-columns: repeat(5, 192px);
     grid-template-rows: repeat(5, 112px);
     grid-template-areas: "about-me about-me about-me cv cv" "about-me about-me about-me cv cv" "about-me about-me about-me contact skills" "p1 p2 projects projects p3" "p4 p5 projects projects p6"; }
@@ -142,6 +218,14 @@ footer {
     grid-area: p6; } }
 
 @media (min-width: 1680px) {
+  .nav h1 {
+    margin-left: 60px; }
+  .nav > ul > li {
+    padding: 3px 25px; }
+  .nav > ul > li:last-child {
+    padding-right: 60px; }
+  .nav > ul > li > button {
+    font-size: 24px; }
   .container {
     max-width: 1300px; }
   .grid {

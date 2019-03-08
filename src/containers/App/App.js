@@ -4,8 +4,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        
+        <nav className="nav">
+          <header><h1>Marek Ficht - Portfolio</h1></header>
 
-        <h1>Witam</h1>
+          <button><span></span></button>
+
+          <ul className="nav-1024">
+            <li><button>O mnie</button></li>
+            <li><button>Umiejętności</button></li>
+            <li><button>Projekty</button></li>
+            <li><button>CV</button></li>
+            <li><button>Kontakt</button></li>
+          </ul>
+        </nav>
 
         <div className="container">
           <div className="grid">
