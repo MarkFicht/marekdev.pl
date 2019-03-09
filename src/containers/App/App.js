@@ -10,7 +10,7 @@ class App extends Component {
 
           <button><span></span></button>
 
-          <ul className="nav-1024">
+          <ul className="nav-1024 nav-1680">
             <li><button>O mnie</button></li>
             <li><button>Umiejętności</button></li>
             <li><button>Projekty</button></li>

@@ -29,14 +29,14 @@ footer {
   justify-content: space-between;
   align-items: center;
 
-  //--- 1
+  //--- 1: Header nav
   & h1 {
     margin-left: 30px;
     color: tomato;
     letter-spacing: 1px;
   }
 
-  //--- 2
+  //--- 2: Button for mobile
   & > button {
     display: flex;
     // display: none;
@@ -87,25 +87,29 @@ footer {
     }
   }
 
-  //--- 3
+  //--- 3: List nav - In Mobile (flex/none)
   & > ul {
     list-style-type: none;
     // display: flex;
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
     & > li {
-      padding: 3px 15px;
-      border-right: 2px solid tomato; 
-    }
-    & > li:last-child {
-      padding-right: 30px;
-      border-right: none;
+      padding: 30px 0;
     }
 
     & > li > button {
       background-color: transparent;
       border: none;
-      color: tomato;
+      color: green;
       font-size: 22px;
       font-weight: 600;
     }
@@ -182,13 +186,30 @@ footer {
   .nav h1 {
     margin-left: 50px;
   }
-  .nav > ul {
-    display: flex;
+  .nav {
 
-    & > li:last-child {
-      padding-right: 50px;
+    //--- 3: List nav - In Desktop
+    & > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: unset;
+      align-items: unset;
+      position: unset;
+      width: unset;
+      height: unset;
+
+      & > li {
+        padding: 3px 15px;
+        border-right: 2px solid tomato; 
+      }
+      & > li:last-child {
+        padding-right: 50px;
+        border-right: none;
+      }
+      & > li > button { color: tomato; }
     }
   }
+
   .container { max-width: 1000px; }
   .grid {
     grid-template-columns: repeat(5, 192px);
