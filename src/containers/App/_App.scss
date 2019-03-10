@@ -1,3 +1,11 @@
+$colorSet1: (
+        c1: #202344,    
+        c2: #63667e,
+        c3: #bdbec7,
+        c4: #D6D7DC,
+        c5: #849fff,
+);
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -5,13 +13,13 @@
 }
 
 .App {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
-  background-color: #bdbec7;
+  background-color: map_get($colorSet1, c3);
 }
 
 footer {
-  color: #202344;
+  color: map_get($colorSet1, c1);
   font-size: 20px;
   font-weight: bold;
   margin: 15px 0 20px;
@@ -23,8 +31,8 @@ footer {
   height: 80px;
   left: 0;
   top: 0;
-  background-color: #202344;
-  color: #bdbec7;
+  background-color: map_get($colorSet1, c1);
+  color: map_get($colorSet1, c3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +54,8 @@ footer {
     height: 60px;
     background: transparent;
     border: none;
+    z-index: 3;
+    cursor: pointer;
 
     $fixBorder: 3px;
 
@@ -53,8 +63,8 @@ footer {
       width: 20px;
       height: 20px;
       display: block;
-      background-color: #bdbec7;
-      border: $fixBorder solid #bdbec7;
+      background-color: map_get($colorSet1, c3);
+      border: $fixBorder solid map_get($colorSet1, c3);
       border-radius: 50%;
       position: relative;
 
@@ -62,13 +72,14 @@ footer {
         content: '';
         width: 20px;
         height: 20px;
-        background-color: #bdbec7;
+        background-color: map_get($colorSet1, c3);
         display: block;
-        border: 3px solid #bdbec7;
+        border: 3px solid map_get($colorSet1, c3);
         border-radius: 50%;
         position: absolute;
         transform: translate(-$fixBorder, -$fixBorder);
         left: -30px;
+        transition: all .4s;
       }
 
       &::after {
@@ -77,13 +88,40 @@ footer {
         height: 20px;
         background-color: transparent;
         display: block;
-        border: 3px solid #bdbec7;
+        border: 3px solid map_get($colorSet1, c3);
         border-radius: 50%;
         position: absolute;
         transform: translate(-$fixBorder, -$fixBorder);
         left: 30px;
+        transition: all .4s;
       }
     }
+
+    &:hover > span {
+      transform: rotateY(90deg);
+      transition: transform .4s .2s;
+      animation: showCloseBtn .5s .5s forwards ease-in-out;
+    }
+    &:hover > span::before {
+      font-size: 24px;
+      line-height: 34px;
+      left: 0;
+      animation: showCloseBtnAfterBefore .5s .5s forwards ease-in-out;
+    }
+    &:hover > span::after {
+      font-size: 24px;
+      line-height: 34px;
+      font-weight: bold;
+      left: 0;
+      animation: showCloseBtnAfterBefore .5s .5s forwards ease-in-out;
+    }
+  }
+
+  @keyframes showCloseBtn {
+    to { transform: rotateY(0deg); width: 40px; height: 40px; }
+  }
+  @keyframes showCloseBtnAfterBefore {
+    to { width: 40px; height: 40px; content: 'X'; }
   }
 
   //--- 3: List nav - In Mobile (flex/none)
@@ -95,34 +133,68 @@ footer {
     justify-content: center;
     align-items: center;
     position: fixed;
+    background-color: rgba(0, 0, 0, .93);
     z-index: 2;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    opacity: 0;
+    animation: showNav .5s .2s forwards ease-in-out;
 
     & > li {
-      padding: 30px 0;
+      position: relative;
+      width: 100px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & > li::after {
+      content: '';
+      width: 100px;
+      height: 0;
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      background-color: map_get($colorSet1, c5);        
+      transition: all .6s;
+    }
+    & > li:hover::after {
+      height: 20px;
     }
 
     & > li > button {
       background-color: transparent;
       border: none;
-      color: green;
-      font-size: 22px;
+      color: map_get($colorSet1, c3);
+      font-size: 24px;
       font-weight: 600;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      transition: all .4s;
+      outline: none;
     }
+    & > li > button:hover, button:focus {
+      color: map_get($colorSet1, c5);
+      cursor: pointer;        
+    }
+  }
+
+  @keyframes showNav {
+    to { opacity: 1; }
   }
 }
 
 .container {
   margin: 0 auto;
-  // background-color: #bdbec7;
 }
 
 .grid-item {
-  background-color: #D6D7DC;
-  color: #63667e;
+  background-color: map_get($colorSet1, c4);
+  color: map_get($colorSet1, c2);
   display: flex;
   font-size: 24px;
   font-weight: bold;
@@ -194,16 +266,66 @@ footer {
       position: unset;
       width: unset;
       height: unset;
+      
+      border: 2px solid map_get($colorSet1, c3);
+      border-radius: 7px;
+      overflow: hidden;
+      margin-right: 50px;
 
       & > li {
-        padding: 3px 15px;
-        border-right: 2px solid #bdbec7; 
+        padding: 0;
+        width: 120px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid map_get($colorSet1, c3); 
+        background-color: map_get($colorSet1, c2);
+        transition: all .5s;
+        position: relative;
       }
+
       & > li:last-child {
-        padding-right: 50px;
+        padding-right: 0;
         border-right: none;
       }
-      & > li > button { color: #bdbec7; }
+      & > li::after {
+        content: '';
+        width: 70px;
+        height: 8px;
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(10px);
+        transition: all .4s;
+        background-color: unset;        
+      }
+      & > li::before {
+        content: '';
+        position: absolute;
+        width: calc(100% - 1px);
+        height: 100%;
+        transition: all .4s;
+      }
+
+      & > li > button { 
+        color: map_get($colorSet1, c3);         
+        transition: all .5s;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        z-index: 1;
+      }
+
+      & > li > button:hover, button:focus {
+        color: map_get($colorSet1, c5);
+        cursor: pointer;
+      }
+      & > li:hover::after {
+        background-color: map_get($colorSet1, c5);        
+      }
+      & > li:hover::before {
+        background-color: map_get($colorSet1, c1);       
+      }
     }
   }
 
@@ -237,21 +359,22 @@ footer {
 //---
 @media (min-width: 1680px) {
   .nav h1 {
+    font-size: 26px;
     margin-left: 60px;
   }
   .nav > ul {
+    margin-right: 60px;
 
     & > li {
-      padding: 3px 25px;
-    }
-    & > li:last-child {
-      padding-right: 60px;
+      width: 150px;
+      height: 46px;
     }
 
     & > li > button {
-      font-size: 24px;
+      font-size: 26px;
     }
   }
+
   .container { max-width: 1308px; }
   .grid {
     grid-template-columns: repeat(5, 252px);

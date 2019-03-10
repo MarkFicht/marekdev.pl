@@ -12,7 +12,7 @@ class App extends Component {
 
           <ul className="nav-1024 nav-1680">
             <li><button>O mnie</button></li>
-            <li><button>Umiejętności</button></li>
+            <li><button>Skills</button></li>
             <li><button>Projekty</button></li>
             <li><button>CV</button></li>
             <li><button>Kontakt</button></li>
