@@ -8,6 +8,17 @@ import picContact from '../../img/contact.jpg';
 
 
 class App extends Component {
+
+  state = {
+    showHideNavMobile: false
+  }
+
+  showNavMobile = () => {
+    this.setState({
+      showHideNavMobile: !this.state.showHideNavMobile
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -15,9 +26,11 @@ class App extends Component {
         <nav className="nav">
           <header><h1>Marek Ficht - Portfolio</h1></header>
 
-          <button><span></span></button>
+          <button onClick={ this.showNavMobile }>
+            <span></span>
+          </button>
 
-          <ul className="nav-1024 nav-1680">
+          <ul>
             <li><button>O mnie</button></li>
             <li><button>Skills</button></li>
             <li><button>Projekty</button></li>
@@ -28,17 +41,61 @@ class App extends Component {
 
         <div className="container">
           <div className="grid">
-            <div className="grid-item grid-item-1"><img src={ picAboutMe } alt='about-me' /></div>
-            <div className="grid-item grid-item-2"><img src={ picSkills } alt='skills' /></div>
-            <div className="grid-item grid-item-3"><img src={ picProjects } alt='projects' /></div>
-            <div className="grid-item grid-item-4"><img src={ picResume } alt='resume' /></div>
-            <div className="grid-item grid-item-5"><img src={ picContact } alt='contact' /></div>
-            <div className="grid-item grid-item-6">P1</div>
-            <div className="grid-item grid-item-7">P2</div>
-            <div className="grid-item grid-item-8">P3</div>
-            <div className="grid-item grid-item-9">P4</div>
-            <div className="grid-item grid-item-10">P5</div>
-            <div className="grid-item grid-item-11">P6</div>
+
+            <div className="grid-item grid-item-1">
+              <p>O MNIE</p>
+              <button>Read more</button>
+              <div className='pic'><img src={ picAboutMe } alt='about-me' /></div>
+            </div>
+
+            <div className="grid-item grid-item-2">
+              <p>SKILLS</p>
+              <button>Read more</button>
+              {/* <div className='pic'><img src={ picSkills } alt='skills' /></div> */}
+            </div>
+
+            <div className="grid-item grid-item-3">
+              <p>PROJECTS</p>
+              <button>Read more</button>
+              {/* <div className='pic'><img src={ picProjects } alt='projects' /></div> */}
+            </div>
+
+            <div className="grid-item grid-item-4">
+              <p>CV</p>
+              <button>Read more</button>
+              {/* <div className='pic'><img src={ picResume } alt='resume' /></div> */}
+            </div>
+
+            <div className="grid-item grid-item-5">
+              <p>CONTACT</p>
+              <button>Read more</button>
+              {/* <div className='pic'><img src={ picContact } alt='contact' /></div> */}
+            </div>
+
+            <div className="grid-item grid-item-6">
+              <p>P1</p>
+              <button>Read more</button>
+            </div>
+            <div className="grid-item grid-item-7">
+              <p>P2</p>
+              <button>Read more</button>
+            </div>
+            <div className="grid-item grid-item-8">
+              <p>P3</p>
+              <button>Read more</button>
+            </div>
+            <div className="grid-item grid-item-9">
+              <p>P4</p>
+              <button>Read more</button>
+            </div>
+            <div className="grid-item grid-item-10">
+              <p>P5</p>
+              <button>Read more</button>
+            </div>
+            <div className="grid-item grid-item-11">
+              <p>P6</p>
+              <button>Read more</button>
+            </div>
           </div>
         </div>
 

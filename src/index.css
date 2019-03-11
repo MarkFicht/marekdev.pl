@@ -91,23 +91,6 @@ footer {
     .nav > button:focus > span {
       transition: all .4s;
       filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95)); }
-    .nav > button:hover > span::before {
-      font-size: 24px; }
-    .nav > button:hover > span::after {
-      font-size: 24px;
-      font-weight: bold; }
-
-@keyframes showCloseBtn {
-  to {
-    transform: rotateY(0deg);
-    width: 40px;
-    height: 40px; } }
-
-@keyframes showCloseBtnAfterBefore {
-  to {
-    width: 40px;
-    height: 40px;
-    content: 'X'; } }
   .nav > ul {
     list-style-type: none;
     display: none;
@@ -164,24 +147,76 @@ footer {
   margin: 0 auto; }
 
 .grid-item {
-  background-color: #D6D7DC;
-  color: #63667e;
+  background-color: #63667e;
+  color: #D6D7DC;
   display: flex;
-  font-size: 24px;
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  overflow: hidden; }
-  .grid-item > img {
+  flex-direction: column;
+  position: relative;
+  border: 2px solid rgba(18, 18, 18, 0.6);
+  transition: all .4s; }
+  .grid-item::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+    z-index: -1;
+    transform: skew(2deg, 1deg); }
+  .grid-item:nth-child(4n-3)::before {
+    background: linear-gradient(315deg, rgba(255, 0, 87, 0.5), rgba(230, 74, 25, 0.5)); }
+  .grid-item:nth-child(4n-2)::before {
+    background: linear-gradient(315deg, rgba(137, 255, 0, 0.5), rgba(0, 188, 212, 0.5)); }
+  .grid-item:nth-child(4n-1)::before {
+    background: linear-gradient(315deg, rgba(233, 30, 99, 0.5), rgba(93, 2, 255, 0.5)); }
+  .grid-item:nth-child(4n)::before {
+    background: linear-gradient(315deg, rgba(255, 0, 0, 0.5), rgba(255, 193, 7, 0.5)); }
+
+.grid-item > p {
+  position: absolute;
+  top: 15%;
+  font-size: 26px;
+  z-index: 1; }
+
+.grid-item > button {
+  background-color: transparent;
+  z-index: 1;
+  border: 3px solid #D6D7DC;
+  color: #D6D7DC;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  opacity: 0;
+  width: 150px;
+  height: 36px;
+  position: absolute;
+  bottom: 40%;
+  transition: all .4s; }
+
+.grid-item:hover > button {
+  opacity: 1;
+  bottom: 16%;
+  cursor: pointer; }
+
+.pic {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  opacity: .85; }
+  .pic > img {
     background-size: contain;
-    width: 150%; }
+    width: 100%; }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 270px);
-  grid-gap: 8px;
-  padding: 8px; }
+  grid-gap: 20px;
+  padding: 20px; }
 
 .grid-item {
   display: none; }
@@ -327,9 +362,10 @@ footer {
       height: 10px;
       opacity: .9; }
   .container {
+    margin: 6px auto 0;
     max-width: 1008px; }
   .grid {
-    grid-template-columns: repeat(5, 192px);
+    grid-template-columns: repeat(5, 178px);
     grid-template-rows: repeat(5, 112px);
     grid-template-areas: "about-me about-me about-me cv cv" "about-me about-me about-me cv cv" "about-me about-me about-me contact skills" "p1 p2 projects projects p3" "p4 p5 projects projects p6"; }
   .grid-item-2 {
@@ -371,5 +407,5 @@ footer {
   .container {
     max-width: 1308px; }
   .grid {
-    grid-template-columns: repeat(5, 252px);
+    grid-template-columns: repeat(5, 238px);
     grid-template-rows: repeat(5, 146px); } }
