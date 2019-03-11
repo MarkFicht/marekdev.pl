@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 
+import picAboutMe from '../../img/o-mnie1.jpg';
+import picSkills from '../../img/skills.jpg';
+import picProjects from '../../img/projects1.jpg';
+import picResume from '../../img/resume.jpg';
+import picContact from '../../img/contact.jpg';
+
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +28,11 @@ class App extends Component {
 
         <div className="container">
           <div className="grid">
-            <div className="grid-item grid-item-1">O MNIE</div>
-            <div className="grid-item grid-item-2">UMIEJĘTNOŚCI</div>
-            <div className="grid-item grid-item-3">PROJEKTY</div>
-            <div className="grid-item grid-item-4">CV</div>
-            <div className="grid-item grid-item-5">KONTAKT</div>
+            <div className="grid-item grid-item-1"><img src={ picAboutMe } alt='about-me' /></div>
+            <div className="grid-item grid-item-2"><img src={ picSkills } alt='skills' /></div>
+            <div className="grid-item grid-item-3"><img src={ picProjects } alt='projects' /></div>
+            <div className="grid-item grid-item-4"><img src={ picResume } alt='resume' /></div>
+            <div className="grid-item grid-item-5"><img src={ picContact } alt='contact' /></div>
             <div className="grid-item grid-item-6">P1</div>
             <div className="grid-item grid-item-7">P2</div>
             <div className="grid-item grid-item-8">P3</div>
@@ -35,7 +42,7 @@ class App extends Component {
           </div>
         </div>
 
-        <footer> Marek Ficht &copy; ALL RIGHTS RESERVED </footer>
+        <footer> Marek Ficht - Front End Dev &copy; ALL RIGHTS RESERVED </footer>
 
       </div>
     );

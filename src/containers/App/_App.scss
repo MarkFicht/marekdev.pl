@@ -4,6 +4,7 @@ $colorSet1: (
         c3: #bdbec7,
         c4: #D6D7DC,
         c5: #849fff,
+        c6: rgba(48, 48, 50, .93)
 );
 
 *, *::before, *::after {
@@ -12,10 +13,13 @@ $colorSet1: (
   box-sizing: border-box;
 }
 
+body {
+  background-color: map_get($colorSet1, c2);
+}
+
 .App {
   width: 100%;
   overflow: hidden;
-  background-color: map_get($colorSet1, c3);
 }
 
 footer {
@@ -31,7 +35,7 @@ footer {
   height: 80px;
   left: 0;
   top: 0;
-  background-color: map_get($colorSet1, c1);
+  background-color: map_get($colorSet1, c6);
   color: map_get($colorSet1, c3);
   display: flex;
   justify-content: space-between;
@@ -41,6 +45,8 @@ footer {
   & h1 {
     margin-left: 30px;
     letter-spacing: 1px;
+    color: #b3e1ff;
+    filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
   }
 
   //--- 2: Button for mobile
@@ -57,14 +63,15 @@ footer {
     z-index: 3;
     cursor: pointer;
 
-    $fixBorder: 3px;
+    // $fixBorder: 3px;
 
     & > span {
       width: 20px;
       height: 20px;
       display: block;
-      background-color: map_get($colorSet1, c3);
-      border: $fixBorder solid map_get($colorSet1, c3);
+      background-image: linear-gradient(to top, #242424 0%, #303030 100%);
+      filter: drop-shadow(0 1px 3px  rgba(#fff, 0.25));
+      transition: all .4s;
       border-radius: 50%;
       position: relative;
 
@@ -72,12 +79,10 @@ footer {
         content: '';
         width: 20px;
         height: 20px;
-        background-color: map_get($colorSet1, c3);
+        background-image: linear-gradient(to top, #242424 0%, #303030 100%);
         display: block;
-        border: 3px solid map_get($colorSet1, c3);
         border-radius: 50%;
         position: absolute;
-        transform: translate(-$fixBorder, -$fixBorder);
         left: -30px;
         transition: all .4s;
       }
@@ -86,35 +91,40 @@ footer {
         content: '';
         width: 20px;
         height: 20px;
-        background-color: transparent;
+        background-image: linear-gradient(to top, #242424 0%, #303030 100%);
         display: block;
-        border: 3px solid map_get($colorSet1, c3);
         border-radius: 50%;
         position: absolute;
-        transform: translate(-$fixBorder, -$fixBorder);
         left: 30px;
         transition: all .4s;
       }
     }
 
-    &:hover > span {
-      transform: rotateY(90deg);
-      transition: transform .4s .2s;
-      animation: showCloseBtn .5s .5s forwards ease-in-out;
+    &:hover > span,
+    &:focus > span {
+      // transform: rotateY(90deg);
+      transition: all .4s;
+      // animation: showCloseBtn .5s .5s forwards ease-in-out;
+      filter: drop-shadow(0 1px 2px  rgba(#fff, 0.95));
     }
     &:hover > span::before {
       font-size: 24px;
-      line-height: 34px;
-      left: 0;
-      animation: showCloseBtnAfterBefore .5s .5s forwards ease-in-out;
+      // line-height: 34px;
+      // left: 0;
+      // animation: showCloseBtnAfterBefore .5s .5s forwards ease-in-out;
     }
     &:hover > span::after {
       font-size: 24px;
-      line-height: 34px;
-      font-weight: bold;
-      left: 0;
-      animation: showCloseBtnAfterBefore .5s .5s forwards ease-in-out;
+      // line-height: 34px;
+      font-weight: bold;    
+      // left: 0;
+      // animation: showCloseBtnAfterBefore .5s .5s forwards ease-in-out;
     }
+
+    // &:focus {
+    //   // background-color: red;
+
+    // }
   }
 
   @keyframes showCloseBtn {
@@ -200,6 +210,13 @@ footer {
   font-weight: bold;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
+  & > img {
+    // background-position: center;
+    background-size: contain;
+    width: 150%;
+  }
 }
 
 //---
@@ -249,6 +266,7 @@ footer {
 
 //---
 @media (min-width: 1024px) {
+  .nav { height: 100px; }
   .nav > button {
     display: none;
   }
@@ -267,9 +285,9 @@ footer {
       width: unset;
       height: unset;
       
-      border: 2px solid map_get($colorSet1, c3);
+      border: 2px solid #121212;
       border-radius: 7px;
-      overflow: hidden;
+      // overflow: hidden;
       margin-right: 50px;
 
       & > li {
@@ -279,52 +297,77 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-right: 1px solid map_get($colorSet1, c3); 
-        background-color: map_get($colorSet1, c2);
+        border-right: 1px solid #121212; 
+        background-image: linear-gradient(to top, #242424 0%, #303030 100%);
         transition: all .5s;
         position: relative;
+        overflow: visible;
       }
-
       & > li:last-child {
         padding-right: 0;
         border-right: none;
+        border-radius: 0 4px 4px 0;
       }
+      & > li:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+
       & > li::after {
         content: '';
-        width: 70px;
-        height: 8px;
+        opacity: 1;
+        width: 99%;
+        height: 5px;
         position: absolute;
-        border-radius: 50%;
-        filter: blur(10px);
+        bottom: -5px;
+        border-radius: 5px;
+        filter: blur(2px);
+        z-index: -1;
         transition: all .4s;
-        background-color: unset;        
+        background-color: rgba(#000, .8);        
       }
       & > li::before {
         content: '';
+        display: block;
+        width: 35px;
+        height: 5px;
+        transition: .1s;
+        background-image: radial-gradient(circle 30px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%);
         position: absolute;
-        width: calc(100% - 1px);
-        height: 100%;
-        transition: all .4s;
+        filter: blur(15px);
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
       }
 
       & > li > button { 
-        color: map_get($colorSet1, c3);         
+        color: #181818;         
         transition: all .5s;
         width: 100%;
         height: 100%;
         outline: none;
         z-index: 1;
+        filter: drop-shadow(0 1px 1px  rgba(#fff, 0.15));
       }
 
       & > li > button:hover, button:focus {
-        color: map_get($colorSet1, c5);
+        color: #b3e1ff;
+        filter: drop-shadow(0 1px 1px  rgba(#fff, 0));
         cursor: pointer;
       }
+      & > li:hover {
+        background-image: linear-gradient(to top, #151515 0%, #1d1d1d 100%);
+        box-shadow: inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3),inset 0 0 7px 2px rgba(0,0,0,0.4);
+      }
       & > li:hover::after {
-        background-color: map_get($colorSet1, c5);        
+        height: 5px;
+        opacity: 0;       
       }
       & > li:hover::before {
-        background-color: map_get($colorSet1, c1);       
+        width: 90px;
+        height: 10px;
+        opacity: .9;      
       }
     }
   }
