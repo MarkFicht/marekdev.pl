@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import picAboutMe from '../../img/o-mnie1.jpg';
+import picAboutMe from '../../img/o-mnie2.jpg';
 import picSkills from '../../img/skills.jpg';
 import picProjects from '../../img/projects1.jpg';
 import picResume from '../../img/resume.jpg';
@@ -51,13 +51,13 @@ class App extends Component {
             <div className="grid-item grid-item-2">
               <p>SKILLS</p>
               <button>Read more</button>
-              {/* <div className='pic'><img src={ picSkills } alt='skills' /></div> */}
+              <div className='pic'><img src={ picSkills } alt='skills' /></div>
             </div>
 
             <div className="grid-item grid-item-3">
               <p>PROJECTS</p>
               <button>Read more</button>
-              {/* <div className='pic'><img src={ picProjects } alt='projects' /></div> */}
+              <div className='pic'><img src={ picProjects } alt='projects' /></div>
             </div>
 
             <div className="grid-item grid-item-4">
@@ -99,7 +99,7 @@ class App extends Component {
           </div>
         </div>
 
-        <footer> Marek Ficht - Front End Dev &copy; ALL RIGHTS RESERVED </footer>
+        <footer> <span>Marek Ficht - Front End Dev</span> <span>&copy; ALL RIGHTS RESERVED</span> </footer>
 
       </div>
     );
