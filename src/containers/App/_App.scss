@@ -231,11 +231,13 @@ footer {
 }
 
 .grid-item {
+
   & > p {
     position: absolute;
     top: 15%;
     font-size: 26px;
     z-index: 1;
+    // color: map-get($map: $colorSet1, $key: c6);
   }
 
   & > button {
@@ -260,19 +262,29 @@ footer {
     bottom: 16%;
     cursor: pointer;
   }
+  &:hover .pic {
+    opacity: 0;
+  }
 }
 
-.pic {
+div.pic {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute;
+  position: relative;
+  top: 0;
+  left: 0;
   opacity: .8;
+  transition: all .4s;
 
-  & > img {
-    // background-position: center;
-    background-size: contain;
+  img {
     width: 100%;
+    background-size: 300%;
+    // background-position: center;
+    // object-fit: cover;
+    // background-size: 200%;
+    // width: 100%;
+    // min-height: 100%;
   }
 }
 
@@ -323,7 +335,7 @@ footer {
 
 //---
 @media (min-width: 1024px) {
-  .nav { height: 100px; }
+  .nav { height: 84px; }
   .nav > button {
     display: none;
   }
@@ -438,9 +450,9 @@ footer {
     grid-template-columns: repeat(5, 178px);
     grid-template-rows: repeat(5, 112px);
     grid-template-areas: 
-          "about-me about-me about-me cv cv"
-          "about-me about-me about-me cv cv"
-          "about-me about-me about-me contact skills"
+          "about-me about-me about-me contact contact"
+          "about-me about-me about-me contact contact"
+          "about-me about-me about-me cv skills"
           "p1 p2 projects projects p3"
           "p4 p5 projects projects p6";
   }

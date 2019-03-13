@@ -55,7 +55,7 @@ class App extends Component {
             </div>
 
             <div className="grid-item grid-item-3">
-              <p>PROJECTS</p>
+              <p>PROJEKTY</p>
               <button>Read more</button>
               <div className='pic'><img src={ picProjects } alt='projects' /></div>
             </div>
@@ -63,13 +63,13 @@ class App extends Component {
             <div className="grid-item grid-item-4">
               <p>CV</p>
               <button>Read more</button>
-              {/* <div className='pic'><img src={ picResume } alt='resume' /></div> */}
+              <div className='pic'><img src={ picResume } alt='resume' /></div>
             </div>
 
             <div className="grid-item grid-item-5">
-              <p>CONTACT</p>
+              <p>KONTAKT</p>
               <button>Read more</button>
-              {/* <div className='pic'><img src={ picContact } alt='contact' /></div> */}
+              <div className='pic'><img src={ picContact } alt='contact' /></div>
             </div>
 
             <div className="grid-item grid-item-6">

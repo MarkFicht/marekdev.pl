@@ -209,15 +209,21 @@ footer {
   bottom: 16%;
   cursor: pointer; }
 
-.pic {
+.grid-item:hover .pic {
+  opacity: 0; }
+
+div.pic {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute;
-  opacity: .8; }
-  .pic > img {
-    background-size: contain;
-    width: 100%; }
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: .8;
+  transition: all .4s; }
+  div.pic img {
+    width: 100%;
+    background-size: 300%; }
 
 .grid {
   display: grid;
@@ -287,7 +293,7 @@ footer {
 
 @media (min-width: 1024px) {
   .nav {
-    height: 100px; }
+    height: 84px; }
   .nav > button {
     display: none; }
   .nav h1 {
@@ -375,7 +381,7 @@ footer {
   .grid {
     grid-template-columns: repeat(5, 178px);
     grid-template-rows: repeat(5, 112px);
-    grid-template-areas: "about-me about-me about-me cv cv" "about-me about-me about-me cv cv" "about-me about-me about-me contact skills" "p1 p2 projects projects p3" "p4 p5 projects projects p6"; }
+    grid-template-areas: "about-me about-me about-me contact contact" "about-me about-me about-me contact contact" "about-me about-me about-me cv skills" "p1 p2 projects projects p3" "p4 p5 projects projects p6"; }
   .grid-item-2 {
     display: flex; }
   .grid-item-1 {
