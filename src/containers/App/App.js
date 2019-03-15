@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         
         <nav className="nav">
-          <header><h1>Marek Ficht - Portfolio</h1></header>
+          <header><h1>Marek Ficht: Portfolio</h1></header>
 
           <button onClick={ this.showNavMobile }>
             <span></span>
@@ -51,31 +51,31 @@ class App extends Component {
             </div>
 
             <div className="grid-item grid-item-2">
-              <h3>SKILLS</h3>
-              <button>Read more</button>
-              <div className='pic' style={{ backgroundImage: `url("${ picSkills }")` }} ></div>
-              {/* <div className='pic'><img src={ picSkills } alt='skills' /></div> */}
-            </div>
-
-            <div className="grid-item grid-item-3">
               <h3>PROJEKTY</h3>
               <button>Read more</button>
               <div className='pic' style={{ backgroundImage: `url("${ picProjects }")` }} ></div>
               {/* <div className='pic'><img src={ picProjects } alt='projects' /></div> */}
             </div>
 
-            <div className="grid-item grid-item-4">
+            <div className="grid-item grid-item-3">
               <h3>CV</h3>
               <button>Read more</button>
               <div className='pic' style={{ backgroundImage: `url("${ picResume }")` }} ></div>
               {/* <div className='pic'><img src={ picResume } alt='resume' /></div> */}
             </div>
 
-            <div className="grid-item grid-item-5">
+            <div className="grid-item grid-item-4">
               <h3>KONTAKT</h3>
               <button>Read more</button>
               <div className='pic' style={{ backgroundImage: `url("${ picContact }")` }} ></div>
               {/* <div className='pic'><img src={ picContact } alt='contact' /></div> */}
+            </div>
+
+            <div className="grid-item grid-item-5">
+              <h3>SKILLS</h3>
+              <button>Read more</button>
+              <div className='pic' style={{ backgroundImage: `url("${picSkills}")` }} ></div>
+              {/* <div className='pic'><img src={ picSkills } alt='skills' /></div> */}
             </div>
 
             <div className="grid-item grid-item-6">
