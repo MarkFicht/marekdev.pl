@@ -6,6 +6,8 @@ import picProjects from '../../img/projects.jpg';
 import picResume from '../../img/resume.jpg';
 import picContact from '../../img/contact.jpg';
 
+const textAboutMe = ['Hej, jestem Marek! Młodszy programista JS. Moja przygoda z światem IT zaczęła się 2 lata temu, po godzinach.', ''];
+
 
 class App extends Component {
 
@@ -20,6 +22,11 @@ class App extends Component {
   }
 
   render() {
+
+    const showHiveNav = { display: this.state.showHideNavMobile ? 'flex' : 'none' };
+    const slowHide = !this.state.showHideNavMobile ? '' : 'slowHide';
+    const showCloseBtn = this.state.showHideNavMobile && <button onClick={ this.showNavMobile }>X</button>;
+
     return (
       <div className="App">
         
@@ -27,10 +34,11 @@ class App extends Component {
           <header><h1>Marek Ficht: Portfolio</h1></header>
 
           <button onClick={ this.showNavMobile }>
-            <span></span>
+            <span className={ slowHide } ></span>
           </button>
 
-          <ul>
+          <ul style={ showHiveNav }>
+            { showCloseBtn }
             <li><button>O mnie</button></li>
             <li><button>Skills</button></li>
             <li><button>Projekty</button></li>
@@ -44,7 +52,7 @@ class App extends Component {
 
             <div className="grid-item grid-item-1">
               <h3>O MNIE</h3>
-              <p>Hej, jestem Marek! Młodszy programista JS. Moja przygoda z światem IT zaczęła się 2 lata temu, po godzinach.</p>
+              <p>{ textAboutMe[0] }</p>           
               <button>Read more</button>
               <div className='pic' style={{ backgroundImage: `url("${ picAboutMe }")` }} ></div>
               {/* <div className='pic'><img src={ picAboutMe } alt='about-me' /></div> */}
