@@ -24,8 +24,8 @@ class App extends Component {
   render() {
 
     const showHiveNav = { display: this.state.showHideNavMobile ? 'flex' : 'none' };
-    const slowHide = !this.state.showHideNavMobile ? '' : 'slowHide';
-    const showCloseBtn = this.state.showHideNavMobile && <button onClick={ this.showNavMobile }>X</button>;
+    const showCloseBtn = !this.state.showHideNavMobile ? '' : 'showCloseBtn';
+    // const showCloseBtn = this.state.showHideNavMobile && <button onClick={ this.showNavMobile }>X</button>;
 
     return (
       <div className="App">
@@ -34,11 +34,10 @@ class App extends Component {
           <header><h1>Marek Ficht: Portfolio</h1></header>
 
           <button onClick={ this.showNavMobile }>
-            <span className={ slowHide } ></span>
+            <span className={ showCloseBtn } ></span>
           </button>
 
           <ul style={ showHiveNav }>
-            { showCloseBtn }
             <li><button>O mnie</button></li>
             <li><button>Skills</button></li>
             <li><button>Projekty</button></li>

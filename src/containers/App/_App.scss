@@ -76,6 +76,7 @@ footer {
     border: none;
     cursor: pointer;
     outline: none;
+    z-index: 3;
 
     & > span {
       width: 20px;
@@ -83,7 +84,7 @@ footer {
       display: block;
       background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
       filter: drop-shadow(0 1px 5px  rgba(#fff, 0.33));
-      transition: all .4s;
+      transition: all .4s, height 2s;
       border-radius: 50%;
       position: relative;
 
@@ -114,7 +115,6 @@ footer {
 
     &:hover > span,
     &:focus > span {
-      transition: all .4s;
       filter: drop-shadow(0 1px 5px  rgba(#fff, 0.9));
     }
     &:hover > span {
@@ -123,10 +123,33 @@ footer {
     }
   }
 
-  .slowHide {
-    transition: all .4s;
-    opacity: 0;
+  .showCloseBtn {
+    position: fixed;
+    width: 50px;
+    height: 0;
+
+    &::before,
+    &::after {
+      left: 0;
+      border-radius: 0;
+      width: 50px;
+      height: 10px;
+    }
+
+    &::before { transform: rotate(45deg); }
+    &::after { transform: rotate(-45deg); }
+
+    // animation: showHideBtn .5s forwards ease-in-out;
   }
+
+  @keyframes showHideBtn {
+    to { width: 100px; }
+  }
+
+  // .slowHide {
+  //   transition: all .4s;
+  //   opacity: 0;
+  // }
 
   // @keyframes showCloseBtn {
   //   to { transform: rotateY(0deg); width: 40px; height: 40px; }
@@ -136,25 +159,25 @@ footer {
   // }
 
   //--- 3: List nav - In Mobile (flex/none)
-  & > ul > button {
-    position: fixed;
-    z-index: 3;
-    cursor: pointer;
-    top: 26px;
-    right: 36px;
-    color: #b3e1ff;
-    filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
-    background-color: transparent;
-    border: none;
-    font-weight: bold;
-    font-size: 32px;
-    outline: none;
-    transition: all .4s;
+  // & > ul > button {
+  //   position: fixed;
+  //   z-index: 3;
+  //   cursor: pointer;
+  //   top: 26px;
+  //   right: 36px;
+  //   color: #b3e1ff;
+  //   filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
+  //   background-color: transparent;
+  //   border: none;
+  //   font-weight: bold;
+  //   font-size: 32px;
+  //   outline: none;
+  //   transition: all .4s;
 
-    &:hover {
-      transform: scale(1.3);
-    }
-  }
+  //   &:hover {
+  //     transform: scale(1.3);
+  //   }
+  // }
   & > ul {
     list-style-type: none;
     display: none;
