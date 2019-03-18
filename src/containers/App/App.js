@@ -12,14 +12,32 @@ const textAboutMe = ['Hej, jestem Marek! Młodszy programista JS. Moja przygoda 
 class App extends Component {
 
   state = {
-    showHideNavMobile: false
-  }
+    showHideNavMobile: false,
+    hideMobileMenu: 1024,
+  };
+
+  componentDidMount() {
+    const { hideMobileMenu } = this.state;
+
+    window.addEventListener('resize', (e) => {
+
+      if ( e.target.outerWidth >= hideMobileMenu ) {
+
+        this.setState({ showHideNavMobile: true })
+      } 
+      // else {
+
+      //   this.setState({ showHideNavMobile: false })
+      // }
+    })
+
+  };
 
   showNavMobile = () => {
     this.setState({
       showHideNavMobile: !this.state.showHideNavMobile
     })
-  }
+  };
 
   render() {
 
@@ -33,8 +51,10 @@ class App extends Component {
         <nav className="nav">
           <header><h1>Marek Ficht: Portfolio</h1></header>
 
-          <button onClick={ this.showNavMobile }>
-            <span className={ showCloseBtn } ></span>
+          <button className={ showCloseBtn } onClick={ this.showNavMobile }>
+            <span></span>
+            <span></span>
+            <span></span>      
           </button>
 
           <ul style={ showHiveNav }>

@@ -42,7 +42,7 @@ footer {
 
 .nav {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   left: 0;
   top: 0;
@@ -52,51 +52,38 @@ footer {
   justify-content: space-between;
   align-items: center; }
   .nav h1 {
-    margin-left: 30px;
+    margin-left: 20px;
     letter-spacing: 1px;
     color: #b3e1ff;
-    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25)); }
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25));
+    font-size: 22px; }
   .nav > button {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 20px;
     width: 100px;
     height: 60px;
     background: transparent;
     border: none;
     cursor: pointer;
     outline: none;
-    z-index: 3; }
+    z-index: 3;
+    position: relative; }
     .nav > button > span {
       width: 20px;
       height: 20px;
-      display: block;
       background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
       filter: drop-shadow(0 1px 5px rgba(255, 255, 255, 0.33));
-      transition: all .4s, height 2s;
+      transition: all .4s;
       border-radius: 50%;
-      position: relative; }
-      .nav > button > span::before {
-        content: '';
-        width: 20px;
-        height: 20px;
-        background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
-        display: block;
-        border-radius: 50%;
-        position: absolute;
-        left: -30px;
-        transition: all .4s; }
-      .nav > button > span::after {
-        content: '';
-        width: 20px;
-        height: 20px;
-        background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
-        display: block;
-        border-radius: 50%;
-        position: absolute;
-        left: 30px;
-        transition: all .4s; }
+      position: absolute; }
+    .nav > button > span:nth-child(1) {
+      right: 70px; }
+    .nav > button > span:nth-child(2) {
+      right: 40px; }
+    .nav > button > span:nth-child(3) {
+      right: 10px; }
     .nav > button:hover > span,
     .nav > button:focus > span {
       filter: drop-shadow(0 1px 5px rgba(255, 255, 255, 0.9)); }
@@ -106,21 +93,18 @@ footer {
         background-image: radial-gradient(#70a0bb 0%, #70a0bb 30%, #91c0dd 100%); }
   .nav .showCloseBtn {
     position: fixed;
-    width: 50px;
-    height: 0; }
-    .nav .showCloseBtn::before, .nav .showCloseBtn::after {
-      left: 0;
-      border-radius: 0;
+    right: 0; }
+    .nav .showCloseBtn > span:nth-child(2) {
+      opacity: 0; }
+    .nav .showCloseBtn > span:nth-child(1),
+    .nav .showCloseBtn > span:nth-child(3) {
+      right: 20px;
+      height: 10px;
       width: 50px;
-      height: 10px; }
-    .nav .showCloseBtn::before {
-      transform: rotate(45deg); }
-    .nav .showCloseBtn::after {
-      transform: rotate(-45deg); }
-
-@keyframes showHideBtn {
-  to {
-    width: 100px; } }
+      border-radius: 0;
+      transform: translate(15px) rotate(45deg); }
+    .nav .showCloseBtn > span:nth-child(3) {
+      transform: translate(15px) rotate(-45deg); }
   .nav > ul {
     list-style-type: none;
     display: none;
@@ -314,6 +298,11 @@ footer {
     font-size: 22px; } }
 
 @media (min-width: 778px) {
+  .nav h1 {
+    font-size: 24px;
+    margin-left: 30px; }
+  .nav > button {
+    margin-right: 30px; }
   .grid {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 260px 260px 180px 180px; }
@@ -356,6 +345,7 @@ footer {
   .nav > button {
     display: none; }
   .nav h1 {
+    font-size: 26px;
     margin-left: 50px; }
   .nav > ul {
     display: flex;
