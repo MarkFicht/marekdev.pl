@@ -17,6 +17,7 @@ body {
   // background-color: map_get($colorSet1, c2);
   background-color: map_get($colorSet1, c6);
   background-image: linear-gradient(45deg, #404050 0%, #494953 50%, #404050 100%);
+  height: 100vh;
 }
 
 .App {
@@ -220,6 +221,8 @@ footer {
 
 .grid-item {
 
+  transition: all .4s;
+
   & > h3 {
     position: absolute;
     top: 50%;
@@ -292,6 +295,16 @@ footer {
 }
 
 .grid-item-1 .pic { background-position: center top; }
+
+// .read-more {
+//   // position: fixed;
+//   // top: 0;
+//   // left: 0;
+//   transition: all .4s;
+//   width: calc(100vw - 40px);
+//   height: calc(100vh - 160px);
+//   z-index: 10;
+// }
 
 
 //***************
