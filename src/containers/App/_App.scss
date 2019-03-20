@@ -13,6 +13,16 @@ $colorSet1: (
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   // background-color: map_get($colorSet1, c2);
   background-color: map_get($colorSet1, c6);
@@ -251,7 +261,8 @@ footer {
   & > button {
     background-color: transparent;
     z-index: 1;
-    border: 3px solid map_get($colorSet1, c4);
+    border: none;
+    // border: 3px solid map_get($colorSet1, c4);
     color: map_get($colorSet1, c4);
     font-size: 16px;
     font-weight: bold;
@@ -263,6 +274,29 @@ footer {
     position: absolute;
     bottom: 40%;
     transition: all .4s;
+    overflow: hidden;
+
+    & > a { border: 3px solid map_get($colorSet1, c4); }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: rgba(#000, .4);
+      transition: all .3s;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      width: 160%;
+      height: 160%;
+    }
   }
 
   &:hover > h3 {
@@ -280,6 +314,33 @@ footer {
     opacity: 0;
   }
 }
+
+// .react-link {
+//   color: map_get($colorSet1, c4);  
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-decoration: none;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   z-index: -1;
+  //   width: 0;
+  //   height: 0;
+  //   border-radius: 50%;
+  //   background-color: rgba(#000, .4);
+  //   transition: all .3s;
+  // }
+
+  // &:hover::before,
+  // &:focus::before {
+  //   width: 160%;
+  //   height: 160%;
+  // }
+// }
 
 .pic {
   width: 100%;

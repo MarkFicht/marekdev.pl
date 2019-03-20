@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 class Nav extends Component {
 
@@ -49,7 +51,7 @@ class Nav extends Component {
                 </button>
 
                 <ul style={ showHiveNav }>
-                    <li><button>O mnie</button></li>
+                    <li><button><NavLink to="/o-mnie" activeStyle={{color: 'red'}}>O mnie</NavLink></button></li>
                     <li><button>Skills</button></li>
                     <li><button>Projekty</button></li>
                     <li><button>CV</button></li>
