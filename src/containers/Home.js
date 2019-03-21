@@ -12,7 +12,6 @@ const textAboutMe = ['Hej, jestem Marek! Młodszy programista JS. Moja przygoda 
 
 class Home extends Component {
 
-
     render() {
         return (
             <div className="grid">
@@ -21,7 +20,7 @@ class Home extends Component {
                     <h3>O MNIE</h3> 
                     <p>{ textAboutMe[0] }</p>           
                     <button>
-                        <Link to="/o-mnie">Read more</Link>
+                        <Link to="/o-mnie">Czytaj więcej</Link>
                     </button>
                     <div className='pic' style={{ backgroundImage: `url("${ picAboutMe }")` }} ></div>
                     {/* <div className='pic'><img src={ picAboutMe } alt='about-me' /></div> */}
@@ -29,28 +28,38 @@ class Home extends Component {
 
                 <div className="grid-item grid-item-2">
                     <h3>PROJEKTY</h3>
-                    <button>Read more</button>
+                    <p>{ textAboutMe[0] }</p>           
+                    <button>
+                        <Link to="/projekty">Zobacz</Link>
+                    </button>
                     <div className='pic' style={{ backgroundImage: `url("${ picProjects }")` }} ></div>
                     {/* <div className='pic'><img src={ picProjects } alt='projects' /></div> */}
                 </div>
 
                 <div className="grid-item grid-item-3">
-                    <h3>CV</h3>
-                    <button>Read more</button>
+                    <h3>CV</h3>        
+                    <button>
+                        <Link to="/cv">Pobierz</Link>
+                    </button>
                     <div className='pic' style={{ backgroundImage: `url("${ picResume }")` }} ></div>
                     {/* <div className='pic'><img src={ picResume } alt='resume' /></div> */}
                 </div>
 
                 <div className="grid-item grid-item-4">
                     <h3>KONTAKT</h3>
-                    <button>Read more</button>
+                    <p>{ textAboutMe[0] }</p>           
+                    <button>
+                        <Link to="/kontakt">Zobacz więcej</Link>
+                    </button>
                     <div className='pic' style={{ backgroundImage: `url("${ picContact }")` }} ></div>
                     {/* <div className='pic'><img src={ picContact } alt='contact' /></div> */}
                 </div>
 
                 <div className="grid-item grid-item-5">
-                    <h3>SKILLS</h3>
-                    <button>Read more</button>
+                    <h3>SKILLS</h3>          
+                    <button>
+                        <Link to="/skills">Zobacz</Link>
+                    </button>
                     <div className='pic' style={{ backgroundImage: `url("${picSkills}")` }} ></div>
                     {/* <div className='pic'><img src={ picSkills } alt='skills' /></div> */}
                 </div>

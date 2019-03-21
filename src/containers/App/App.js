@@ -5,7 +5,11 @@ import Nav from '../Nav';
 import Home from '../Home';
 import Footer from '../Footer';
 
-import AboutMe from '../AboutMe';
+import AboutMe from '../AboutMe-Page';
+import Skills from '../Skills-Page';
+import Projects from '../Projects-Page';
+import CV from '../CV-Page';
+import Contact from '../Contact-Page';
 
 
 class App extends Component {
@@ -20,6 +24,10 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={ Home } />
               <Route exact path='/o-mnie' component={ AboutMe } />
+              <Route exact path='/skills' component={ Skills } />
+              <Route exact path='/projekty' component={ Projects } />
+              <Route exact path='/cv' component={ CV } />
+              <Route exact path='/kontakt' component={ Contact } />
             </Switch>
           </div>
 
