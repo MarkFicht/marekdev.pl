@@ -30,7 +30,7 @@ a {
 body {
   background-color: #303032;
   background-image: linear-gradient(45deg, #404050 0%, #494953 50%, #404050 100%);
-  height: 100vh; }
+  height: 100%; }
 
 .App {
   width: 100%;
@@ -61,12 +61,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .nav h1 {
-    margin-left: 20px;
-    letter-spacing: 1px;
-    color: #b3e1ff;
-    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25));
-    font-size: 22px; }
+  .nav header {
+    margin-left: 20px; }
+    .nav header h1 {
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: #b3e1ff;
+      filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25)); }
   .nav > button {
     display: flex;
     justify-content: space-around;
@@ -137,7 +138,7 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center; }
-    .nav > ul > li::after {
+    .nav > ul > li a::after {
       content: '';
       width: 100px;
       height: 0;
@@ -146,20 +147,20 @@ footer {
       filter: blur(20px);
       background-color: #849fff;
       transition: all .6s; }
-    .nav > ul > li:hover::after {
+    .nav > ul > li a:hover::after {
       height: 20px; }
-    .nav > ul > li > button {
+    .nav > ul > li button {
       background-color: transparent;
       border: none;
       color: #bdbec7;
       font-size: 24px;
       font-weight: 600;
+      outline: none;
       z-index: 2;
       width: 100%;
       height: 100%;
-      transition: all .4s;
-      outline: none; }
-    .nav > ul > li > button:hover, .nav > ul button:focus {
+      transition: all .4s; }
+    .nav > ul > li button:hover {
       color: #849fff;
       cursor: pointer; }
 
@@ -218,7 +219,7 @@ footer {
     transition: all .4s; }
   .grid-item > button {
     background-color: transparent;
-    z-index: 1;
+    z-index: -1;
     border: none;
     color: #D6D7DC;
     font-size: 16px;
@@ -253,6 +254,7 @@ footer {
   .grid-item:hover > p {
     opacity: 1; }
   .grid-item:hover > button {
+    z-index: 2;
     opacity: 1;
     bottom: 14%;
     cursor: pointer; }
@@ -273,6 +275,13 @@ footer {
 
 .grid-item-1 .pic {
   background-position: center top; }
+
+.active-nav::after {
+  height: 20px !important; }
+
+.active-nav button {
+  color: #849fff !important;
+  cursor: default !important; }
 
 .grid {
   display: grid;
@@ -322,9 +331,10 @@ footer {
     font-size: 22px; } }
 
 @media (min-width: 778px) {
-  .nav h1 {
-    font-size: 24px;
+  .nav header {
     margin-left: 30px; }
+    .nav header h1 {
+      font-size: 24px; }
   .nav > button {
     margin-right: 30px; }
   .grid {
@@ -368,9 +378,10 @@ footer {
     height: 84px; }
   .nav > button {
     display: none; }
-  .nav h1 {
-    font-size: 26px;
+  .nav header {
     margin-left: 50px; }
+    .nav header h1 {
+      font-size: 26px; }
   .nav > ul {
     display: flex;
     flex-direction: row;
@@ -400,7 +411,7 @@ footer {
       border-radius: 0 4px 4px 0; }
     .nav > ul > li:first-child {
       border-radius: 4px 0 0 4px; }
-    .nav > ul > li::after {
+    .nav > ul > li > a::after {
       content: '';
       opacity: 1;
       width: 99%;
@@ -412,7 +423,7 @@ footer {
       z-index: -1;
       transition: all .4s;
       background-color: rgba(0, 0, 0, 0.8); }
-    .nav > ul > li::before {
+    .nav > ul > li > a::before {
       content: '';
       display: block;
       width: 35px;
@@ -426,28 +437,38 @@ footer {
       border-radius: 50%;
       transform: translate(-50%, -50%);
       opacity: 0; }
-    .nav > ul > li > button {
+    .nav > ul > li button {
       color: #121212;
       transition: all .5s;
       width: 100%;
       height: 130%;
-      outline: none;
-      z-index: 1;
       filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.15)); }
-    .nav > ul > li > button:hover, .nav > ul button:focus {
+    .nav > ul > li button:hover {
       color: #b3e1ff;
       filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0));
       cursor: pointer; }
     .nav > ul > li:hover {
       background-image: linear-gradient(to top, #151515 0%, #1d1d1d 100%);
       box-shadow: inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0, 0, 0, 0.3), inset 0 0 7px 2px rgba(0, 0, 0, 0.4); }
-    .nav > ul > li:hover::after {
-      height: 5px;
+    .nav > ul > li:hover > a::after {
       opacity: 0; }
-    .nav > ul > li:hover::before {
+    .nav > ul > li:hover > a::before {
       width: 90px;
       height: 10px;
       opacity: .9; }
+  .active-nav {
+    background-image: linear-gradient(to top, #151515 0%, #1d1d1d 100%);
+    box-shadow: inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0, 0, 0, 0.3), inset 0 0 7px 2px rgba(0, 0, 0, 0.4); }
+    .active-nav::after {
+      height: 5px !important;
+      opacity: 0 !important; }
+    .active-nav::before {
+      width: 90px !important;
+      height: 10px !important;
+      opacity: .9 !important; }
+    .active-nav button {
+      color: #b3e1ff !important;
+      filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0)) !important; }
   .container {
     margin: 6px auto 0;
     max-width: 1008px; }
@@ -483,9 +504,10 @@ footer {
     font-size: 26px; } }
 
 @media (min-width: 1680px) {
-  .nav h1 {
-    font-size: 26px;
+  .nav header {
     margin-left: 60px; }
+    .nav header h1 {
+      font-size: 28px; }
   .nav > ul {
     margin-right: 60px; }
     .nav > ul > li {

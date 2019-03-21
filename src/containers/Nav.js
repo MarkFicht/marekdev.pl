@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 class Nav extends Component {
@@ -42,7 +42,9 @@ class Nav extends Component {
 
         return (
             <nav className="nav">
-                <header><h1>Marek Ficht: Portfolio</h1></header>
+                <header>
+                    <Link to='/'><h1>Marek Ficht: Portfolio</h1></Link>
+                </header>
 
                 <button className={ showCloseBtn } onClick={ this.showNavMobile }>
                     <span></span>
@@ -51,11 +53,21 @@ class Nav extends Component {
                 </button>
 
                 <ul style={ showHiveNav }>
-                    <li><button><NavLink to="/o-mnie" activeStyle={{color: 'red'}}>O mnie</NavLink></button></li>
-                    <li><button>Skills</button></li>
-                    <li><button>Projekty</button></li>
-                    <li><button>CV</button></li>
-                    <li><button>Kontakt</button></li>
+                    <li>
+                        <NavLink to="/o-mnie" activeClassName='active-nav'><button>O mnie</button></NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/skills" activeClassName='active-nav'><button>Skills</button></NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/projekty" activeClassName='active-nav'><button>Projekty</button></NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/cv" activeClassName='active-nav'><button>CV</button></NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/kontakt" activeClassName='active-nav'><button>Kontakt</button></NavLink>
+                    </li>
                 </ul>
             </nav>
         )

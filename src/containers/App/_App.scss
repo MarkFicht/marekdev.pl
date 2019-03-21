@@ -27,11 +27,12 @@ body {
   // background-color: map_get($colorSet1, c2);
   background-color: map_get($colorSet1, c6);
   background-image: linear-gradient(45deg, #404050 0%, #494953 50%, #404050 100%);
-  height: 100vh;
+  height: 100%;
 }
 
 .App {
   width: 100%;
+  // height: 100vh;
   overflow: hidden;
 }
 
@@ -66,12 +67,15 @@ footer {
   align-items: center;
 
   //--- 1: Header nav
-  & h1 {
+  & header {
     margin-left: 20px;
-    letter-spacing: 1px;
-    color: #b3e1ff;
-    filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
-    font-size: 22px;
+
+    & h1 { 
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: #b3e1ff;
+      filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
+    }
   }
 
   //--- 2: Button for mobile
@@ -158,7 +162,7 @@ footer {
       align-items: center;
     }
 
-    & > li::after {
+    & > li a::after {
       content: '';
       width: 100px;
       height: 0;
@@ -168,23 +172,23 @@ footer {
       background-color: map_get($colorSet1, c5);        
       transition: all .6s;
     }
-    & > li:hover::after {
+    & > li a:hover::after {
       height: 20px;
     }
 
-    & > li > button {
+    & > li button {
       background-color: transparent;
       border: none;
       color: map_get($colorSet1, c3);
       font-size: 24px;
       font-weight: 600;
+      outline: none;
       z-index: 2;
       width: 100%;
       height: 100%;
       transition: all .4s;
-      outline: none;
     }
-    & > li > button:hover, button:focus {
+    & > li button:hover {
       color: map_get($colorSet1, c5);
       cursor: pointer;        
     }
@@ -260,7 +264,7 @@ footer {
 
   & > button {
     background-color: transparent;
-    z-index: 1;
+    z-index: -1;
     border: none;
     // border: 3px solid map_get($colorSet1, c4);
     color: map_get($colorSet1, c4);
@@ -306,6 +310,7 @@ footer {
     opacity: 1;
   }
   &:hover > button {
+    z-index: 2;
     opacity: 1;
     bottom: 14%;
     cursor: pointer;
@@ -315,33 +320,7 @@ footer {
   }
 }
 
-// .react-link {
-//   color: map_get($colorSet1, c4);  
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-decoration: none;
-
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   z-index: -1;
-  //   width: 0;
-  //   height: 0;
-  //   border-radius: 50%;
-  //   background-color: rgba(#000, .4);
-  //   transition: all .3s;
-  // }
-
-  // &:hover::before,
-  // &:focus::before {
-  //   width: 160%;
-  //   height: 160%;
-  // }
-// }
-
+//---
 .pic {
   width: 100%;
   height: 100%;
@@ -357,15 +336,15 @@ footer {
 
 .grid-item-1 .pic { background-position: center top; }
 
-// .read-more {
-//   // position: fixed;
-//   // top: 0;
-//   // left: 0;
-//   transition: all .4s;
-//   width: calc(100vw - 40px);
-//   height: calc(100vh - 160px);
-//   z-index: 10;
-// }
+.active-nav {
+
+  &::after { height: 20px !important; }
+
+  & button { 
+    color: map_get($colorSet1, c5) !important; 
+    cursor: default !important;
+  }
+}
 
 
 //***************
@@ -409,9 +388,10 @@ footer {
 
 //---
 @media (min-width: 778px) {
-  .nav h1 {
-    font-size: 24px;
+  .nav header {
     margin-left: 30px;
+
+    & h1 { font-size: 24px; }
   }
   .nav > button { margin-right: 30px; }
 
@@ -444,9 +424,10 @@ footer {
   .nav > button {
     display: none;
   }
-  .nav h1 {
-    font-size: 26px;
+  .nav header {
     margin-left: 50px;
+
+    & h1 { font-size: 26px; }
   }
   .nav {
 
@@ -487,7 +468,9 @@ footer {
         border-radius: 4px 0 0 4px;
       }
 
-      & > li::after {
+      & > li > a { }
+
+      & > li > a::after {
         content: '';
         opacity: 1;
         width: 99%;
@@ -498,9 +481,10 @@ footer {
         filter: blur(2px);
         z-index: -1;
         transition: all .4s;
-        background-color: rgba(#000, .8);        
+        background-color: rgba(#000, .8); 
       }
-      & > li::before {
+
+      & > li > a::before {
         content: '';
         display: block;
         width: 35px;
@@ -516,18 +500,16 @@ footer {
         opacity: 0;
       }
 
-      & > li > button { 
+      & > li button { 
         // color: #181818;    
         color: #121212;         
         transition: all .5s;
         width: 100%;
         height: 130%;
-        outline: none;
-        z-index: 1;
         filter: drop-shadow(0 1px 1px  rgba(#fff, 0.15));
       }
 
-      & > li > button:hover, button:focus {
+      & > li button:hover {
         color: #b3e1ff;
         filter: drop-shadow(0 1px 1px  rgba(#fff, 0));
         cursor: pointer;
@@ -536,15 +518,35 @@ footer {
         background-image: linear-gradient(to top, #151515 0%, #1d1d1d 100%);
         box-shadow: inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3),inset 0 0 7px 2px rgba(0,0,0,0.4);
       }
-      & > li:hover::after {
-        height: 5px;
+      & > li:hover > a::after {
         opacity: 0;       
       }
-      & > li:hover::before {
+      & > li:hover > a::before {
         width: 90px;
         height: 10px;
         opacity: .9;      
       }
+    }
+  }
+
+  //---
+  .active-nav {
+    background-image: linear-gradient(to top, #151515 0%, #1d1d1d 100%);
+    box-shadow: inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3),inset 0 0 7px 2px rgba(0,0,0,0.4);
+    
+    &::after {
+      height: 5px !important;
+      opacity: 0 !important; 
+    }
+    &::before {
+      width: 90px !important;
+      height: 10px !important;
+      opacity: .9 !important; 
+    }
+
+    & button {
+      color: #b3e1ff !important;
+      filter: drop-shadow(0 1px 1px  rgba(#fff, 0)) !important;
     }
   }
 
@@ -582,9 +584,10 @@ footer {
 
 //---
 @media (min-width: 1680px) {
-  .nav h1 {
-    font-size: 26px;
+  .nav header {
     margin-left: 60px;
+
+    & h1 { font-size: 28px; }
   }
   .nav > ul {
     margin-right: 60px;

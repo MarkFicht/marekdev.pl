@@ -21,7 +21,7 @@ class Home extends Component {
                     <h3>O MNIE</h3> 
                     <p>{ textAboutMe[0] }</p>           
                     <button>
-                        <Link className='react-link' to="/o-mnie">Read more</Link>
+                        <Link to="/o-mnie">Read more</Link>
                     </button>
                     <div className='pic' style={{ backgroundImage: `url("${ picAboutMe }")` }} ></div>
                     {/* <div className='pic'><img src={ picAboutMe } alt='about-me' /></div> */}
