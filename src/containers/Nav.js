@@ -5,40 +5,42 @@ import { NavLink, Link } from 'react-router-dom';
 class Nav extends Component {
 
     state = {
-        showHideNavMobile: false,
-        hideMobileMenu: 1024,
+        showNavMobile: false,
+        widthNavMobile: 1024,
     };
 
     componentDidMount() {
-        const { hideMobileMenu } = this.state;
+        const { widthNavMobile } = this.state;
 
         //--- once
-        if ( document.body.clientWidth >= hideMobileMenu ) {
+        if ( document.body.clientWidth >= widthNavMobile ) {
 
-            this.setState({ showHideNavMobile: true })
+            this.setState({ showNavMobile: true })
         }
 
         //---
         window.addEventListener('resize', (e) => {
 
-            if ( e.target.outerWidth >= hideMobileMenu ) {
+            if ( e.target.outerWidth >= widthNavMobile ) {
 
-                this.setState({ showHideNavMobile: true })
+                this.setState({ showNavMobile: true })
             }
         })
 
     };
 
-    showNavMobile = () => {
+    handleNav = () => {
+        const { widthNavMobile } = this.state;
+        if ( document.body.clientWidth >= widthNavMobile ) return null;
+
         this.setState({
-            showHideNavMobile: !this.state.showHideNavMobile
+            showNavMobile: !this.state.showNavMobile
         })
     };
 
     render() {
 
-        const showHiveNav = { display: this.state.showHideNavMobile ? 'flex' : 'none' };
-        const showCloseBtn = !this.state.showHideNavMobile ? '' : 'showCloseBtn';
+        const { showNavMobile } = this.state;
 
         return (
             <nav className="nav">
@@ -46,13 +48,13 @@ class Nav extends Component {
                     <Link to='/'><h1>Marek Ficht: Portfolio</h1></Link>
                 </header>
 
-                <button className={ showCloseBtn } onClick={ this.showNavMobile }>
+                <button className={ showNavMobile ? 'showCloseBtn' : '' } onClick={ this.handleNav }>
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
-                <ul style={ showHiveNav }>
+                <ul style={{ display: showNavMobile ? 'flex' : 'none' }} onClick={ this.handleNav }>
                     <li>
                         <NavLink to="/o-mnie" activeClassName='active-nav'><button>O mnie</button></NavLink>
                     </li>
