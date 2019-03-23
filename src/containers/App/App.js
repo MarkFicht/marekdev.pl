@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch, NavLink } from 'react-router-dom';
 
+import ReactLoading from 'react-loading';
+
 import Nav from '../Nav';
 import Home from '../Home';
 import Footer from '../Footer';
@@ -19,6 +21,9 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Nav />
+          {/* <div className='container-loader'>
+            <ReactLoading type='spinningBubbles' color='#bdbec7' width={100} />
+          </div> */}
 
           <div className="container">
             <Switch>

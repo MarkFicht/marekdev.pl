@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import ReactLoading from 'react-loading';
+
 import picAboutMe from '../img/o-mnie.jpg';
 import picSkills from '../img/skills.jpg';
 import picProjects from '../img/projects.jpg';
@@ -12,7 +14,28 @@ const textAboutMe = ['Hej, jestem Marek! Młodszy programista JS. Moja przygoda 
 
 class Home extends Component {
 
+    state = {
+        loading: true
+    }
+
+    componentDidMount() {
+        const loadingTime = setTimeout( () => {
+
+            this.setState({ loading: false })
+            clearTimeout(loadingTime);
+        }, 1000 );
+    }
+
     render() {
+
+        if ( this.state.loading ) {
+            return (
+                <div className='container-loader'>
+                    <ReactLoading type='spinningBubbles' color='#bdbec7' width={100} />
+                </div>
+            )
+        }
+
         return (
             <div className="grid">
 

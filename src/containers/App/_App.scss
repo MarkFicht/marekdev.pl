@@ -43,6 +43,28 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+//--- Loading spiner
+.container-loader {
+  height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {        // ITS FOR CHANGE LATER
+  min-height: 72vh;
+}
+
+.grid, .loading {
+  opacity: 0;
+  animation: showContent .66s .2s forwards linear;
+}
+
+@keyframes showContent {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .App {
   width: 100%;
   // height: 101vh;

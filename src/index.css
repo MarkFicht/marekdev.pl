@@ -44,6 +44,25 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   position: relative; }
 
+.container-loader {
+  height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.loading {
+  min-height: 72vh; }
+
+.grid, .loading {
+  opacity: 0;
+  animation: showContent .66s .2s forwards linear; }
+
+@keyframes showContent {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .App {
   width: 100%;
   min-height: calc(100vh + 1px);
