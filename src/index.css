@@ -63,6 +63,44 @@ body::-webkit-scrollbar-thumb {
   to {
     opacity: 1; } }
 
+.container-subpage > h3 {
+  padding: 25px 0 0;
+  position: relative;
+  font-size: 36px;
+  font-weight: bold;
+  color: transparent; }
+  .container-subpage > h3::before {
+    left: 42%;
+    bottom: -30px; }
+  .container-subpage > h3::after {
+    left: 58%;
+    bottom: 30px; }
+  .container-subpage > h3::before, .container-subpage > h3::after {
+    content: 'O mnie';
+    letter-spacing: 1px;
+    color: #b3e1ff;
+    filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.25));
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%);
+    animation: showHeaderSubpage 1s .2s forwards ease-in-out; }
+
+.container-subpage > section {
+  border: 1px solid black;
+  width: calc(100% - 60px);
+  margin: 20px 30px;
+  padding: 20px 40px;
+  letter-spacing: 1px;
+  opacity: 0;
+  font-size: 20px;
+  animation: showNav .5s .5s forwards ease-in-out; }
+
+@keyframes showHeaderSubpage {
+  to {
+    left: 50%;
+    bottom: 0;
+    opacity: .7; } }
+
 .App {
   width: 100%;
   min-height: calc(100vh + 1px);
@@ -86,9 +124,10 @@ footer {
   position: relative;
   width: 100%;
   height: 80px;
+  margin: 20px auto 0;
   left: 0;
   top: 0;
-  background-image: linear-gradient(to top, #242424 0%, #303030 100%);
+  border: 1px solid red;
   color: #bdbec7;
   display: flex;
   justify-content: space-between;
@@ -96,10 +135,36 @@ footer {
   .nav header {
     margin-left: 20px; }
     .nav header h1 {
-      font-size: 22px;
-      letter-spacing: 1px;
-      color: #b3e1ff;
-      filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25)); }
+      display: none; }
+  .nav .logo {
+    width: 120px;
+    height: 80px;
+    position: relative;
+    border: 1px solid black; }
+  .nav .letter-m,
+  .nav .letter-f {
+    width: 60px;
+    height: 60px;
+    background-color: #63667e;
+    color: #D6D7DC;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    transform: rotate(-7deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 2;
+    /* fixed for center letters */
+    padding-bottom: 4px; }
+  .nav .letter-f {
+    top: 15px;
+    left: 55px;
+    background-color: #74778f;
+    transform: rotate(3deg);
+    z-index: 1; }
   .nav > button {
     display: flex;
     justify-content: space-around;
@@ -363,12 +428,6 @@ footer {
     font-size: 22px; } }
 
 @media (min-width: 778px) {
-  .nav header {
-    margin-left: 30px; }
-    .nav header h1 {
-      font-size: 24px; }
-  .nav > button {
-    margin-right: 30px; }
   .grid {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 260px 260px 180px 180px; }
@@ -407,13 +466,11 @@ footer {
 
 @media (min-width: 1024px) {
   .nav {
-    height: 84px; }
+    max-width: calc(1008px - (5*8px)); }
   .nav > button {
     display: none; }
   .nav header {
-    margin-left: 50px; }
-    .nav header h1 {
-      font-size: 26px; }
+    margin-left: 0; }
   .nav > ul {
     display: flex;
     flex-direction: row;
@@ -424,7 +481,7 @@ footer {
     height: unset;
     border: 2px solid #121212;
     border-radius: 7px;
-    margin-right: 50px; }
+    margin-right: 0; }
     .nav > ul > li {
       padding: 0;
       width: 120px;
@@ -502,7 +559,7 @@ footer {
       color: #b3e1ff !important;
       filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0)) !important; }
   .container {
-    margin: 6px auto 0;
+    margin: 0 auto;
     max-width: 1008px; }
   .grid {
     grid-template-columns: repeat(5, 178px);
@@ -536,17 +593,26 @@ footer {
     font-size: 26px; } }
 
 @media (min-width: 1680px) {
-  .nav header {
-    margin-left: 60px; }
-    .nav header h1 {
-      font-size: 28px; }
-  .nav > ul {
-    margin-right: 60px; }
-    .nav > ul > li {
-      width: 150px;
-      height: 46px; }
-    .nav > ul > li > button {
-      font-size: 26px; }
+  .nav {
+    max-width: calc(1308px - (5*8px));
+    height: 100px; }
+  .nav > ul > li {
+    width: 150px;
+    height: 46px; }
+  .nav > ul > li > button {
+    font-size: 26px; }
+  .nav .logo {
+    height: 100px;
+    width: 135px; }
+    .nav .logo .letter-m,
+    .nav .logo .letter-f {
+      width: 70px;
+      height: 70px; }
+    .nav .logo .letter-m {
+      top: 7px; }
+    .nav .logo .letter-f {
+      top: 25px;
+      left: 60px; }
   .container {
     max-width: 1308px; }
   .grid {

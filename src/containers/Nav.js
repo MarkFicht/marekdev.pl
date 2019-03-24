@@ -44,9 +44,18 @@ class Nav extends Component {
 
         return (
             <nav className="nav">
-                <header>
-                    <Link to='/'><h1>Marek Ficht: Portfolio</h1></Link>
+
+                <header className='logo'>
+                    <Link to='/'>
+                        <h1>Marek Ficht Portfolio</h1>
+                        <div className='letter-m'>M</div>
+                        <div className='letter-f'>F</div>
+                    </Link>
                 </header>
+
+                {/* <header>
+                    <Link to='/'><h1>Marek Ficht Portfolio</h1></Link>
+                </header> */}
 
                 <button className={ showNavMobile ? 'showCloseBtn' : '' } onClick={ this.handleNav }>
                     <span></span>
