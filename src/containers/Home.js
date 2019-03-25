@@ -23,7 +23,7 @@ class Home extends Component {
 
             this.setState({ loading: false })
             clearTimeout(loadingTime);
-        }, 1000 );
+        }, 660 );
     }
 
     render() {
@@ -39,14 +39,36 @@ class Home extends Component {
         return (
             <div className="grid">
 
-                <div className="grid-item grid-item-1 read-more">
+                {/* <div className="grid-item grid-item-1">
                     <h3>O MNIE</h3> 
                     <p>{ textAboutMe[0] }</p>           
                     <button>
                         <Link to="/o-mnie">Czytaj więcej</Link>
                     </button>
                     <div className='pic' style={{ backgroundImage: `url("${ picAboutMe }")` }} ></div>
-                    {/* <div className='pic'><img src={ picAboutMe } alt='about-me' /></div> */}
+                </div> */}
+
+                {/* <div className="grid-item grid-item-1">
+                    <span className='skew-effect'>
+                        <h3>O MNIE</h3>
+                        <p>{ textAboutMe[0] }</p>
+                        <button>
+                            <Link to="/o-mnie">Czytaj więcej</Link>
+                        </button>
+                        <div className='pic' style={{ backgroundImage: `url("${picAboutMe}")` }} ></div>
+                    </span>
+                </div> */}
+
+                <div className="grid-item grid-item-1">
+                    <h3>O MNIE</h3> 
+                    <p>{ textAboutMe[0] }</p>           
+                    <button>
+                        <Link to="/o-mnie">Czytaj więcej</Link>
+                    </button>
+
+                    <div className='pic-skew'>
+                        <div className='pic' style={{ backgroundImage: `url("${picAboutMe}")` }} ></div>
+                    </div>
                 </div>
 
                 <div className="grid-item grid-item-2">
@@ -55,8 +77,10 @@ class Home extends Component {
                     <button>
                         <Link to="/projekty">Zobacz</Link>
                     </button>
-                    <div className='pic' style={{ backgroundImage: `url("${ picProjects }")` }} ></div>
-                    {/* <div className='pic'><img src={ picProjects } alt='projects' /></div> */}
+
+                    <div className='pic-skew'>
+                        <div className='pic' style={{ backgroundImage: `url("${picProjects}")` }} ></div>                    
+                    </div>
                 </div>
 
                 <div className="grid-item grid-item-3">
@@ -64,8 +88,10 @@ class Home extends Component {
                     <button>
                         <Link to="/cv">Pobierz</Link>
                     </button>
-                    <div className='pic' style={{ backgroundImage: `url("${ picResume }")` }} ></div>
-                    {/* <div className='pic'><img src={ picResume } alt='resume' /></div> */}
+
+                    <div className='pic-skew'>
+                        <div className='pic' style={{ backgroundImage: `url("${picResume}")` }} ></div>                    
+                    </div>
                 </div>
 
                 <div className="grid-item grid-item-4">
@@ -74,8 +100,10 @@ class Home extends Component {
                     <button>
                         <Link to="/kontakt">Zobacz więcej</Link>
                     </button>
-                    <div className='pic' style={{ backgroundImage: `url("${ picContact }")` }} ></div>
-                    {/* <div className='pic'><img src={ picContact } alt='contact' /></div> */}
+
+                    <div className='pic-skew'>
+                        <div className='pic' style={{ backgroundImage: `url("${picContact}")` }} ></div>                    
+                    </div>
                 </div>
 
                 <div className="grid-item grid-item-5">
@@ -83,8 +111,10 @@ class Home extends Component {
                     <button>
                         <Link to="/skills">Zobacz</Link>
                     </button>
-                    <div className='pic' style={{ backgroundImage: `url("${picSkills}")` }} ></div>
-                    {/* <div className='pic'><img src={ picSkills } alt='skills' /></div> */}
+
+                    <div className='pic-skew'>
+                        <div className='pic' style={{ backgroundImage: `url("${picSkills}")` }} ></div>                    
+                    </div>
                 </div>
 
                 <div className="grid-item grid-item-6">
