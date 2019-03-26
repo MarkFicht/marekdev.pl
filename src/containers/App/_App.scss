@@ -68,41 +68,25 @@ body::-webkit-scrollbar-thumb {
 //---
 .container-subpage {
   // background-color: #00bcd4;
+  perspective: 2000px;
 
   & > h3 {
     padding: 25px 0 0;
     position: relative;
     font-size: 36px;
     font-weight: bold;
-    // color: transparent;
     letter-spacing: 1px;
     color: #b3e1ff;
-    filter: drop-shadow(0 1px 5px  rgba(#000, 0.25));
     transition: all .4s;
-    animation: headerSubpage .7s .4s forwards ease-in-out;
-    transform: perspective(400px) rotateY(180deg);
+    animation: headerSubpage .8s .4s forwards ease-in-out;
+    transform: rotateY(180deg);
+    // transform: rotateY(45deg);
     opacity: 0;
-
-    // &::before { left: 42%; bottom: -30px; }
-    // &::after { left: 58%; bottom: 30px; }
-
-    // &::before, &::after {
-    //   content: 'O mnie';
-    //   letter-spacing: 1px;
-    //   color: #b3e1ff;
-    //   filter: drop-shadow(0 1px 5px  rgba(#000, 0.25));
-    //   position: absolute;
-    //   opacity: 0;
-    //   // bottom: 0;
-    //   // left: 50%;
-    //   transform: translate(-50%);
-    //   animation: showHeaderSubpage 1s .2s forwards ease-in-out;
-    // }
-
+    // opacity: 1;
+    filter: drop-shadow(0 1px 5px  rgba(#000, 0.25));
   }
 
   & > section {
-    //  background-color: green;
     border: 1px solid black;
     width: calc(100% - 60px);
     margin: 20px 30px;
@@ -115,15 +99,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 @keyframes headerSubpage {
-  0% { transform: perspective(400px) rotateY(180deg); opacity: 0; }
-  66% { transform: perspective(400px) rotateY(-30deg); opacity: .66; }
-  90% { transform: perspective(400px) rotateY(5deg); opacity: .9; }
-  100% { transform: perspective(400px) rotateY(0deg); opacity: 1; }
+  0% { transform: rotateY(180deg); opacity: 0; }
+  66% { transform: rotateY(-30deg); opacity: .66; }
+  90% { transform: rotateY(10deg); opacity: .9; }
+  100% { transform: rotateY(0deg); opacity: 1; }
 }
-
-// @keyframes showHeaderSubpage {
-//   to { left: 50%; bottom: 0; opacity: .7; }
-// }
 
 .App {
   width: 100%;
@@ -176,8 +156,8 @@ footer {
     position: relative;
     // border: 1px solid black;
 
-    &:hover .letter-m { background-color: lighten(#63667e, 4%); }
-    &:hover .letter-f { background-color: lighten(#74778f, 4%); }
+    &:hover .letter-m { background-color: lighten(#63667e, 8%); }
+    &:hover .letter-f { background-color: lighten(#74778f, 8%); }
   }
 
   .letter-m,
@@ -223,7 +203,7 @@ footer {
     background: transparent;
     border: none;
     cursor: pointer;
-    outline: none;
+    // outline: none;
     z-index: 3;
     position: relative;
 
@@ -288,16 +268,25 @@ footer {
 
     & > li {
       position: relative;
-      width: 100px;
       height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      // border: 1px solid red;
     }
 
+    & > li a {
+      background-color: transparent;
+      border: none;
+      color: map_get($colorSet1, c3);
+      font-size: 28px;
+      font-weight: 600;
+      // outline: none;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      transition: all .4s;
+    }
     & > li a::after {
       content: '';
-      width: 100px;
+      width: 100%;
       height: 0;
       position: absolute;
       border-radius: 50%;
@@ -305,25 +294,13 @@ footer {
       background-color: map_get($colorSet1, c5);        
       transition: all .6s;
     }
-    & > li a:hover::after {
-      height: 20px;
-    }
 
-    & > li button {
-      background-color: transparent;
-      border: none;
-      color: map_get($colorSet1, c3);
-      font-size: 28px;
-      font-weight: 600;
-      outline: none;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      transition: all .4s;
-    }
-    & > li button:hover {
+    & > li a:hover {
       color: map_get($colorSet1, c5);
       cursor: pointer;        
+    }
+    & > li a:hover::after {
+      height: 20px;
     }
   }
 
@@ -379,28 +356,11 @@ footer {
     z-index: 1;
     transform: translate(0, -50%);
     filter: drop-shadow(0 0 5px rgba(#000, .95));
-    // text-shadow: 
-    //     1px 0 5px rgba(#000, .52),
-    //     0 1px 5px rgba(#000, .52),
-    //     -1px 0 5px rgba(#000, .52),
-    //     0 -1px 5px rgba(#000, .52);
     transition: all .4s;
     letter-spacing: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   transition: all .4s;
-    //   z-index: -1;
-    //   width: 120%;
-    //   height: 95%;
-    //   // background-color: #63667e;
-    //   background-color: rgba(#63667e, .75);
-    //   transform: skew(5deg, 1deg);
-    // }
   }
 
   & > p {
@@ -411,11 +371,11 @@ footer {
     transition: all .4s;
   }
 
-  & > button {
+  & > a {
     background-color: transparent;
     z-index: -1;
     border: none;
-    // border: 3px solid map_get($colorSet1, c4);
+    border: 3px solid map_get($colorSet1, c4);
     color: map_get($colorSet1, c4);
     font-size: 16px;
     font-weight: bold;
@@ -428,8 +388,6 @@ footer {
     bottom: 40%;
     transition: all .4s;
     overflow: hidden;
-
-    & > a { border: 3px solid map_get($colorSet1, c4); }
 
     &::before {
       content: '';
@@ -452,26 +410,15 @@ footer {
     }
   }
 
-  &:hover > h3 {
-    top: 20%;
-    // filter: drop-shadow(0 0 5px rgba(#000, .95));
-  }
-  // &:hover > h3::before {
-  //   height: 0;
-  //   width: 0;
-  // }
-  &:hover > p {
-    opacity: 1;
-  }
-  &:hover > button {
+  &:hover > h3 { top: 20%; }
+  &:hover > p { opacity: 1; }
+  &:hover > a {
     z-index: 2;
     opacity: 1;
     bottom: 14%;
     cursor: pointer;
   }
-  &:hover .pic-skew {
-    opacity: 0;
-  }
+  &:hover .pic-skew { opacity: 0; }
 }
 
 //---
@@ -504,13 +451,10 @@ footer {
 .grid-item-5 .pic { width: 130%; height: 130%; }
 
 .active-nav {
+  color: map_get($colorSet1, c5) !important; 
+  cursor: default !important;
 
   &::after { height: 20px !important; }
-
-  & button { 
-    color: map_get($colorSet1, c5) !important; 
-    cursor: default !important;
-  }
 }
 
 
@@ -606,7 +550,7 @@ footer {
 
       & > li {
         width: unset;
-        height: 40px;
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -615,6 +559,11 @@ footer {
         // border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
       }
 
+      & > li a {
+        font-size: 30px;
+        color: #b3b3bb;
+        filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
+      }
       & > li a::after { 
         filter: unset;
         width: 0;
@@ -626,13 +575,7 @@ footer {
         transition: all .4s;
       }
 
-      & > li button {
-        font-size: 30px;
-        color: #b3b3bb;
-        filter: drop-shadow(0 1px 2px  rgba(#fff, 0.25));
-      }
-
-      & > li button:hover {
+      & > li a:hover {
         color: #b3e1ff;
         filter: drop-shadow(0 1px 1px  rgba(#fff, 0.45));
         cursor: pointer;
@@ -646,15 +589,12 @@ footer {
 
   //---
   .active-nav {
+    color: #b3e1ff !important;
+    filter: drop-shadow(0 1px 1px  rgba(#fff, .45)) !important;
 
     &::after {
       height: 4px !important;
       width: 100% !important;
-    }
-
-    & button {
-      color: #b3e1ff !important;
-      filter: drop-shadow(0 1px 1px  rgba(#fff, .45)) !important;
     }
   }
 
@@ -699,10 +639,10 @@ footer {
   .nav > ul {
 
     & > li {
-      height: 46px;
+      height: 56px;
       margin-left: 40px;
     }
-    & > li button {
+    & > li a {
       font-size: 34px;
     }
   }

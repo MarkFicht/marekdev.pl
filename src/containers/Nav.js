@@ -65,19 +65,19 @@ class Nav extends Component {
 
                 <ul style={{ display: showNavMobile ? 'flex' : 'none' }} onClick={ this.handleNav }>
                     <li>
-                        <NavLink to="/o-mnie" activeClassName='active-nav'><button>O mnie</button></NavLink>
+                        <NavLink to="/o-mnie" activeClassName='active-nav'>O mnie</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/skills" activeClassName='active-nav'><button>Skills</button></NavLink>
+                        <NavLink to="/skills" activeClassName='active-nav'>Skills</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/projekty" activeClassName='active-nav'><button>Projekty</button></NavLink>
+                        <NavLink to="/projekty" activeClassName='active-nav'>Projekty</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/cv" activeClassName='active-nav'><button>CV</button></NavLink>
+                        <NavLink to="/cv" activeClassName='active-nav'>CV</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/kontakt" activeClassName='active-nav'><button>Kontakt</button></NavLink>
+                        <NavLink to="/kontakt" activeClassName='active-nav'>Kontakt</NavLink>
                     </li>
                 </ul>
             </nav>

@@ -63,41 +63,42 @@ body::-webkit-scrollbar-thumb {
   to {
     opacity: 1; } }
 
-.container-subpage > h3 {
-  padding: 25px 0 0;
-  position: relative;
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #b3e1ff;
-  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.25));
-  transition: all .4s;
-  animation: headerSubpage .7s .4s forwards ease-in-out;
-  transform: perspective(400px) rotateY(180deg);
-  opacity: 0; }
-
-.container-subpage > section {
-  border: 1px solid black;
-  width: calc(100% - 60px);
-  margin: 20px 30px;
-  padding: 20px 40px;
-  letter-spacing: 1px;
-  opacity: 0;
-  font-size: 20px;
-  animation: showNav .5s .5s forwards ease-in-out; }
+.container-subpage {
+  perspective: 2000px; }
+  .container-subpage > h3 {
+    padding: 25px 0 0;
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #b3e1ff;
+    transition: all .4s;
+    animation: headerSubpage .8s .4s forwards ease-in-out;
+    transform: rotateY(180deg);
+    opacity: 0;
+    filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.25)); }
+  .container-subpage > section {
+    border: 1px solid black;
+    width: calc(100% - 60px);
+    margin: 20px 30px;
+    padding: 20px 40px;
+    letter-spacing: 1px;
+    opacity: 0;
+    font-size: 20px;
+    animation: showNav .5s .5s forwards ease-in-out; }
 
 @keyframes headerSubpage {
   0% {
-    transform: perspective(400px) rotateY(180deg);
+    transform: rotateY(180deg);
     opacity: 0; }
   66% {
-    transform: perspective(400px) rotateY(-30deg);
+    transform: rotateY(-30deg);
     opacity: .66; }
   90% {
-    transform: perspective(400px) rotateY(5deg);
+    transform: rotateY(10deg);
     opacity: .9; }
   100% {
-    transform: perspective(400px) rotateY(0deg);
+    transform: rotateY(0deg);
     opacity: 1; } }
 
 .App {
@@ -139,9 +140,9 @@ footer {
     height: 80px;
     position: relative; }
     .nav .logo:hover .letter-m {
-      background-color: #6c6f89; }
+      background-color: #767a94; }
     .nav .logo:hover .letter-f {
-      background-color: #7f8298; }
+      background-color: #8b8da1; }
   .nav .letter-m,
   .nav .letter-f {
     width: 60px;
@@ -177,7 +178,6 @@ footer {
     background: transparent;
     border: none;
     cursor: pointer;
-    outline: none;
     z-index: 3;
     position: relative; }
     .nav > button > span {
@@ -232,36 +232,31 @@ footer {
     animation: showNav .5s .2s forwards ease-in-out; }
     .nav > ul > li {
       position: relative;
-      width: 100px;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
+      height: 70px; }
+    .nav > ul > li a {
+      background-color: transparent;
+      border: none;
+      color: #bdbec7;
+      font-size: 28px;
+      font-weight: 600;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      transition: all .4s; }
     .nav > ul > li a::after {
       content: '';
-      width: 100px;
+      width: 100%;
       height: 0;
       position: absolute;
       border-radius: 50%;
       filter: blur(20px);
       background-color: #849fff;
       transition: all .6s; }
-    .nav > ul > li a:hover::after {
-      height: 20px; }
-    .nav > ul > li button {
-      background-color: transparent;
-      border: none;
-      color: #bdbec7;
-      font-size: 28px;
-      font-weight: 600;
-      outline: none;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      transition: all .4s; }
-    .nav > ul > li button:hover {
+    .nav > ul > li a:hover {
       color: #849fff;
       cursor: pointer; }
+    .nav > ul > li a:hover::after {
+      height: 20px; }
 
 @keyframes showNav {
   to {
@@ -317,10 +312,11 @@ footer {
   opacity: 0;
   transition: all .4s; }
 
-.grid-item > button {
+.grid-item > a {
   background-color: transparent;
   z-index: -1;
   border: none;
+  border: 3px solid #D6D7DC;
   color: #D6D7DC;
   font-size: 16px;
   font-weight: bold;
@@ -332,9 +328,7 @@ footer {
   bottom: 40%;
   transition: all .4s;
   overflow: hidden; }
-  .grid-item > button > a {
-    border: 3px solid #D6D7DC; }
-  .grid-item > button::before {
+  .grid-item > a::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -346,7 +340,7 @@ footer {
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.4);
     transition: all .3s; }
-  .grid-item > button:hover::before, .grid-item > button:focus::before {
+  .grid-item > a:hover::before, .grid-item > a:focus::before {
     width: 160%;
     height: 160%; }
 
@@ -356,7 +350,7 @@ footer {
 .grid-item:hover > p {
   opacity: 1; }
 
-.grid-item:hover > button {
+.grid-item:hover > a {
   z-index: 2;
   opacity: 1;
   bottom: 14%;
@@ -397,12 +391,11 @@ footer {
   width: 130%;
   height: 130%; }
 
-.active-nav::after {
-  height: 20px !important; }
-
-.active-nav button {
+.active-nav {
   color: #849fff !important;
   cursor: default !important; }
+  .active-nav::after {
+    height: 20px !important; }
 
 .grid {
   display: grid;
@@ -509,11 +502,15 @@ footer {
     background-color: transparent; }
     .nav > ul > li {
       width: unset;
-      height: 40px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-left: 34px; }
+    .nav > ul > li a {
+      font-size: 30px;
+      color: #b3b3bb;
+      filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25)); }
     .nav > ul > li a::after {
       filter: unset;
       width: 0;
@@ -523,23 +520,19 @@ footer {
       background-color: #b3e1ff;
       filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.55));
       transition: all .4s; }
-    .nav > ul > li button {
-      font-size: 30px;
-      color: #b3b3bb;
-      filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25)); }
-    .nav > ul > li button:hover {
+    .nav > ul > li a:hover {
       color: #b3e1ff;
       filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.45));
       cursor: pointer; }
     .nav > ul > li a:hover::after {
       height: 4px;
       width: 100%; }
-  .active-nav::after {
-    height: 4px !important;
-    width: 100% !important; }
-  .active-nav button {
+  .active-nav {
     color: #b3e1ff !important;
     filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.45)) !important; }
+    .active-nav::after {
+      height: 4px !important;
+      width: 100% !important; }
   .container {
     margin: 0 auto;
     max-width: 1008px; }
@@ -579,9 +572,9 @@ footer {
     max-width: calc(1308px - (5*8px));
     height: 110px; }
   .nav > ul > li {
-    height: 46px;
+    height: 56px;
     margin-left: 40px; }
-  .nav > ul > li button {
+  .nav > ul > li a {
     font-size: 34px; }
   .nav .logo {
     height: 100px;

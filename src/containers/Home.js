@@ -39,33 +39,11 @@ class Home extends Component {
         return (
             <div className="grid">
 
-                {/* <div className="grid-item grid-item-1">
-                    <h3>O MNIE</h3> 
-                    <p>{ textAboutMe[0] }</p>           
-                    <button>
-                        <Link to="/o-mnie">Czytaj więcej</Link>
-                    </button>
-                    <div className='pic' style={{ backgroundImage: `url("${ picAboutMe }")` }} ></div>
-                </div> */}
-
-                {/* <div className="grid-item grid-item-1">
-                    <span className='skew-effect'>
-                        <h3>O MNIE</h3>
-                        <p>{ textAboutMe[0] }</p>
-                        <button>
-                            <Link to="/o-mnie">Czytaj więcej</Link>
-                        </button>
-                        <div className='pic' style={{ backgroundImage: `url("${picAboutMe}")` }} ></div>
-                    </span>
-                </div> */}
-
                 <div className="grid-item grid-item-1">
                     <h3>O MNIE</h3> 
                     <p>{ textAboutMe[0] }</p>           
-                    <button>
-                        <Link to="/o-mnie">Czytaj więcej</Link>
-                    </button>
-
+                    <Link to="/o-mnie">Czytaj więcej</Link>
+                    
                     <div className='pic-skew'>
                         <div className='pic' style={{ backgroundImage: `url("${picAboutMe}")` }} ></div>
                     </div>
@@ -74,10 +52,8 @@ class Home extends Component {
                 <div className="grid-item grid-item-2">
                     <h3>PROJEKTY</h3>
                     <p>{ textAboutMe[0] }</p>           
-                    <button>
-                        <Link to="/projekty">Zobacz</Link>
-                    </button>
-
+                    <Link to="/projekty">Zobacz</Link>
+                    
                     <div className='pic-skew'>
                         <div className='pic' style={{ backgroundImage: `url("${picProjects}")` }} ></div>                    
                     </div>
@@ -85,9 +61,7 @@ class Home extends Component {
 
                 <div className="grid-item grid-item-3">
                     <h3>CV</h3>        
-                    <button>
-                        <Link to="/cv">Pobierz</Link>
-                    </button>
+                    <Link to="/cv">Pobierz</Link>
 
                     <div className='pic-skew'>
                         <div className='pic' style={{ backgroundImage: `url("${picResume}")` }} ></div>                    
@@ -97,10 +71,8 @@ class Home extends Component {
                 <div className="grid-item grid-item-4">
                     <h3>KONTAKT</h3>
                     <p>{ textAboutMe[0] }</p>           
-                    <button>
-                        <Link to="/kontakt">Zobacz więcej</Link>
-                    </button>
-
+                    <Link to="/kontakt">Zobacz więcej</Link>
+                    
                     <div className='pic-skew'>
                         <div className='pic' style={{ backgroundImage: `url("${picContact}")` }} ></div>                    
                     </div>
@@ -108,10 +80,8 @@ class Home extends Component {
 
                 <div className="grid-item grid-item-5">
                     <h3>SKILLS</h3>          
-                    <button>
-                        <Link to="/skills">Zobacz</Link>
-                    </button>
-
+                     <Link to="/skills">Zobacz</Link>
+                    
                     <div className='pic-skew'>
                         <div className='pic' style={{ backgroundImage: `url("${picSkills}")` }} ></div>                    
                     </div>
@@ -119,32 +89,32 @@ class Home extends Component {
 
                 <div className="grid-item grid-item-6">
                     <h3>P1</h3>
-                    <button>Read more</button>
+                    <Link to="/">Read more</Link>
                 </div>
 
                 <div className="grid-item grid-item-7">
                     <h3>P2</h3>
-                    <button>Read more</button>
+                    <Link to="/">Read more</Link>
                 </div>
 
                 <div className="grid-item grid-item-8">
                     <h3>P3</h3>
-                    <button>Read more</button>
+                    <Link to="/">Read more</Link>
                 </div>
 
                 <div className="grid-item grid-item-9">
                     <h3>P4</h3>
-                    <button>Read more</button>
+                    <Link to="/">Read more</Link>
                 </div>
 
                 <div className="grid-item grid-item-10">
                     <h3>P5</h3>
-                    <button>Read more</button>
+                    <Link to="/">Read more</Link>
                 </div>
 
                 <div className="grid-item grid-item-11">
                     <h3>P6</h3>
-                    <button>Read more</button>
+                    <Link to="/">Read more</Link>
                 </div>
             </div>
         )
