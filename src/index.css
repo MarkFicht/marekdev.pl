@@ -29,8 +29,8 @@ a {
 
 body {
   background-color: #303032;
-  background-image: linear-gradient(45deg, #404050 0%, #494953 50%, #404050 100%);
-  height: 100%; }
+  height: 100%;
+  color: #D6D7DC; }
 
 body::-webkit-scrollbar {
   width: 1em; }
@@ -78,12 +78,11 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
     filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.25)); }
   .container-subpage > section {
-    border: 1px solid black;
-    width: calc(100% - 60px);
-    margin: 20px 30px;
-    padding: 20px 40px;
+    border: 1px solid #eee;
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px 40px;
     letter-spacing: 1px;
-    opacity: 0;
     font-size: 20px;
     animation: showNav .5s .5s forwards ease-in-out; }
 
@@ -104,7 +103,8 @@ body::-webkit-scrollbar-thumb {
 .App {
   width: 100%;
   min-height: calc(100vh + 1px);
-  overflow: hidden; }
+  overflow: hidden;
+  background-attachment: fixed; }
 
 footer {
   letter-spacing: 1px;
@@ -183,8 +183,9 @@ footer {
     .nav > button > span {
       width: 20px;
       height: 20px;
-      background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
-      filter: drop-shadow(0 1px 5px rgba(255, 255, 255, 0.33));
+      border: 2px solid #9898a3;
+      background-image: radial-gradient(#919199 0%, #919199 20%, #b3b3bb 100%);
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
       transition: all .4s;
       border-radius: 50%;
       position: absolute; }
@@ -194,16 +195,16 @@ footer {
       right: 40px; }
     .nav > button > span:nth-child(3) {
       right: 10px; }
-    .nav > button:hover > span,
-    .nav > button:focus > span {
-      filter: drop-shadow(0 1px 5px rgba(255, 255, 255, 0.9)); }
     .nav > button:hover > span {
-      background-image: radial-gradient(#70a0bb 0%, #70a0bb 30%, #91c0dd 100%); }
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+      background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%); }
       .nav > button:hover > span::before, .nav > button:hover > span::after {
-        background-image: radial-gradient(#70a0bb 0%, #70a0bb 30%, #91c0dd 100%); }
+        background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%); }
   .nav .showCloseBtn {
     position: fixed;
-    right: 0; }
+    right: 0;
+    width: 62px;
+    transition: width .1s .4s; }
     .nav .showCloseBtn > span:nth-child(2) {
       opacity: 0; }
     .nav .showCloseBtn > span:nth-child(1),
@@ -212,9 +213,13 @@ footer {
       height: 10px;
       width: 50px;
       border-radius: 0;
+      background: #b3b3bb;
       transform: translate(15px) rotate(45deg); }
     .nav .showCloseBtn > span:nth-child(3) {
       transform: translate(15px) rotate(-45deg); }
+    .nav .showCloseBtn:hover > span {
+      filter: none;
+      background: #849fff; }
   .nav > ul {
     list-style-type: none;
     display: none;
@@ -281,16 +286,15 @@ footer {
     bottom: -2px;
     left: -2px;
     right: -2px;
-    z-index: -1;
     transform: skew(1.5deg, 0.7deg); }
   .grid-item:nth-child(4n-3)::before {
-    background: linear-gradient(315deg, rgba(255, 0, 87, 0.5), rgba(230, 74, 25, 0.5)); }
+    background: linear-gradient(315deg, rgba(255, 0, 87, 0.55), #e64a19); }
   .grid-item:nth-child(4n-2)::before {
-    background: linear-gradient(315deg, rgba(137, 255, 0, 0.5), rgba(0, 188, 212, 0.5)); }
+    background: linear-gradient(315deg, rgba(137, 255, 0, 0.55), #00bcd4); }
   .grid-item:nth-child(4n-1)::before {
-    background: linear-gradient(315deg, rgba(233, 30, 99, 0.5), rgba(93, 2, 255, 0.5)); }
+    background: linear-gradient(315deg, rgba(233, 30, 99, 0.55), #5d02ff); }
   .grid-item:nth-child(4n)::before {
-    background: linear-gradient(315deg, rgba(255, 0, 0, 0.5), rgba(255, 193, 7, 0.5)); }
+    background: linear-gradient(315deg, rgba(255, 0, 0, 0.55), #ffc107); }
 
 .grid-item > h3 {
   position: absolute;
@@ -365,7 +369,7 @@ footer {
   position: relative;
   top: 0;
   left: 0;
-  opacity: .3;
+  opacity: .33;
   transition: all .4s;
   transform: skew(1.5deg, 0.7deg);
   overflow: hidden; }

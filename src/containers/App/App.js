@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch, NavLink } from 'react-router-dom';
 
+/** This pattern is downloaded from www.subtlepatterns.com */
+import bgImg from '../../img/bg.png';
+
 import Nav from '../Nav';
 import Home from '../Home';
 import Footer from '../Footer';
@@ -17,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="App" style={{ backgroundImage: `url("${bgImg}")` }}>
           <Nav />
 
           <div className="container">

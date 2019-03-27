@@ -24,10 +24,10 @@ a {
 }
 
 body {
-  // background-color: map_get($colorSet1, c2);
   background-color: map_get($colorSet1, c6);
-  background-image: linear-gradient(45deg, #404050 0%, #494953 50%, #404050 100%);
+  // background-image: linear-gradient(45deg, #404050 0%, #494953 50%, #404050 100%);
   height: 100%;
+  color: map_get($colorSet1, c4);
 }
 
 body::-webkit-scrollbar {
@@ -87,12 +87,11 @@ body::-webkit-scrollbar-thumb {
   }
 
   & > section {
-    border: 1px solid black;
-    width: calc(100% - 60px);
-    margin: 20px 30px;
-    padding: 20px 40px;
+    border: 1px solid #eee;
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px 40px;
     letter-spacing: 1px;
-    opacity: 0;
     font-size: 20px;
     animation: showNav .5s .5s forwards ease-in-out;
   }
@@ -110,6 +109,7 @@ body::-webkit-scrollbar-thumb {
   // height: 101vh;
   min-height: calc(100vh + 1px);
   overflow: hidden;
+  background-attachment: fixed;
 }
 
 footer {
@@ -206,12 +206,16 @@ footer {
     // outline: none;
     z-index: 3;
     position: relative;
+    // border: 1px solid red;
 
     & > span {
       width: 20px;
       height: 20px;
-      background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
-      filter: drop-shadow(0 1px 5px  rgba(#fff, 0.33));
+      border: 2px solid darken(#b3b3bb, 10%);
+      background-image: radial-gradient(#919199 0%, #919199 20%, #b3b3bb 100%);
+      filter: drop-shadow(0 0 5px  rgba(#fff, 0.15));
+      // background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
+      // filter: drop-shadow(0 1px 5px  rgba(#fff, 0.33));
       transition: all .4s;
       border-radius: 50%;
       position: absolute;
@@ -220,12 +224,11 @@ footer {
     & > span:nth-child(2) { right: 40px; }
     & > span:nth-child(3) { right: 10px; }
 
-
-    &:hover > span,
-    &:focus > span { filter: drop-shadow(0 1px 5px  rgba(#fff, 0.9)); }
     &:hover > span {
-      background-image: radial-gradient(#70a0bb 0%, #70a0bb 30%, #91c0dd 100%);
-      &::before, &::after { background-image: radial-gradient(#70a0bb 0%, #70a0bb 30%, #91c0dd 100%); }
+      filter: drop-shadow(0 0 5px  rgba(#fff, 0.5));
+      background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%);
+
+      &::before, &::after { background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%); }
     }
   }
 
@@ -233,6 +236,8 @@ footer {
   .showCloseBtn {
     position: fixed;
     right: 0;
+    width: 62px;
+    transition: width .1s .4s;
 
     & > span:nth-child(2) { opacity: 0; }
 
@@ -243,9 +248,16 @@ footer {
       height: 10px;
       width: 50px;
       border-radius: 0;
+      // border: 2px solid transparent;
+      background: #b3b3bb;
       transform: translate(15px) rotate(45deg);
     }
     & > span:nth-child(3) { transform: translate(15px) rotate(-45deg); }
+
+    &:hover > span {
+      filter: none;
+      background: map_get($colorSet1, c5);
+    }
   }
 
   //--- 3: List nav - In Mobile (flex/none)
@@ -336,15 +348,17 @@ footer {
     // bottom: 0;
     // left: 0;
     // right: 0;
-    z-index: -1;
     transform: skew(1.5deg, .7deg);
     // overflow: hidden;
   }
 
-  &:nth-child(4n-3)::before { background: linear-gradient(315deg, rgba(#ff0057, .5), rgba(#e64a19, .5)); }
-  &:nth-child(4n-2)::before { background: linear-gradient(315deg, rgba(#89ff00, .5), rgba(#00bcd4, .5)); }
-  &:nth-child(4n-1)::before { background: linear-gradient(315deg, rgba(#e91e63, .5), rgba(#5d02ff, .5)); }
-  &:nth-child(4n)::before { background: linear-gradient(315deg, rgba(#ff0000, .5), rgba(#ffc107, .5)); }
+  $opacityBGLinearGradier1: .55;
+  $opacityBGLinearGradier2: 1;
+
+  &:nth-child(4n-3)::before { background: linear-gradient(315deg, rgba(#ff0057, $opacityBGLinearGradier1), rgba(#e64a19, $opacityBGLinearGradier2)); }
+  &:nth-child(4n-2)::before { background: linear-gradient(315deg, rgba(#89ff00, $opacityBGLinearGradier1), rgba(#00bcd4, $opacityBGLinearGradier2)); }
+  &:nth-child(4n-1)::before { background: linear-gradient(315deg, rgba(#e91e63, $opacityBGLinearGradier1), rgba(#5d02ff, $opacityBGLinearGradier2)); }
+  &:nth-child(4n)::before { background: linear-gradient(315deg, rgba(#ff0000, $opacityBGLinearGradier1), rgba(#ffc107, $opacityBGLinearGradier2)); }
 }
 
 .grid-item {
@@ -428,7 +442,7 @@ footer {
   position: relative;
   top: 0;
   left: 0;
-  opacity: .3;
+  opacity: .33;
   transition: all .4s;
   transform: skew(1.5deg, .7deg);
   overflow: hidden;
