@@ -18,6 +18,9 @@ import Contact from '../Contact-Page';
 class App extends Component {
 
   render() {
+
+  console.log('Pattern is downloaded from www.subtlepatterns.com');
+
     return (
       <BrowserRouter>
         <div className="App" style={{ backgroundImage: `url("${bgImg}")` }}>

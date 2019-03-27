@@ -73,7 +73,7 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: 1px;
     color: #b3e1ff;
     transition: all .4s;
-    animation: headerSubpage .8s .4s forwards ease-in-out;
+    animation: headerSubpage .85s .45s forwards ease-in-out;
     transform: rotateY(180deg);
     opacity: 0;
     filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.25)); }
@@ -178,14 +178,14 @@ footer {
     background: transparent;
     border: none;
     cursor: pointer;
+    outline: none;
     z-index: 3;
     position: relative; }
     .nav > button > span {
       width: 20px;
       height: 20px;
-      border: 2px solid #9898a3;
-      background-image: radial-gradient(#919199 0%, #919199 20%, #b3b3bb 100%);
-      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
+      border: 2px solid #b3b3bb;
+      background: #b3b3bb;
       transition: all .4s;
       border-radius: 50%;
       position: absolute; }
@@ -194,32 +194,26 @@ footer {
     .nav > button > span:nth-child(2) {
       right: 40px; }
     .nav > button > span:nth-child(3) {
-      right: 10px; }
+      right: 10px;
+      background: none; }
     .nav > button:hover > span {
-      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
-      background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%); }
-      .nav > button:hover > span::before, .nav > button:hover > span::after {
-        background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%); }
+      background: #91c0dd; }
   .nav .showCloseBtn {
     position: fixed;
-    right: 0;
-    width: 62px;
-    transition: width .1s .4s; }
+    right: 0; }
     .nav .showCloseBtn > span:nth-child(2) {
       opacity: 0; }
     .nav .showCloseBtn > span:nth-child(1),
     .nav .showCloseBtn > span:nth-child(3) {
       right: 20px;
-      height: 10px;
+      height: 8px;
       width: 50px;
-      border-radius: 0;
       background: #b3b3bb;
       transform: translate(15px) rotate(45deg); }
     .nav .showCloseBtn > span:nth-child(3) {
       transform: translate(15px) rotate(-45deg); }
     .nav .showCloseBtn:hover > span {
-      filter: none;
-      background: #849fff; }
+      background: #91c0dd; }
   .nav > ul {
     list-style-type: none;
     display: none;

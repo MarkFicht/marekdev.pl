@@ -78,7 +78,7 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: 1px;
     color: #b3e1ff;
     transition: all .4s;
-    animation: headerSubpage .8s .4s forwards ease-in-out;
+    animation: headerSubpage .85s .45s forwards ease-in-out;
     transform: rotateY(180deg);
     // transform: rotateY(45deg);
     opacity: 0;
@@ -203,7 +203,7 @@ footer {
     background: transparent;
     border: none;
     cursor: pointer;
-    // outline: none;
+    outline: none;
     z-index: 3;
     position: relative;
     // border: 1px solid red;
@@ -211,24 +211,19 @@ footer {
     & > span {
       width: 20px;
       height: 20px;
-      border: 2px solid darken(#b3b3bb, 10%);
-      background-image: radial-gradient(#919199 0%, #919199 20%, #b3b3bb 100%);
-      filter: drop-shadow(0 0 5px  rgba(#fff, 0.15));
-      // background-image: radial-gradient(#242424 0%, #242424 30%, #303030 100%);
-      // filter: drop-shadow(0 1px 5px  rgba(#fff, 0.33));
+      border: 2px solid #b3b3bb;
+      background: #b3b3bb;
       transition: all .4s;
       border-radius: 50%;
       position: absolute;
     }
     & > span:nth-child(1) { right: 70px; }
     & > span:nth-child(2) { right: 40px; }
-    & > span:nth-child(3) { right: 10px; }
+    & > span:nth-child(3) { right: 10px; background: none; }
 
     &:hover > span {
-      filter: drop-shadow(0 0 5px  rgba(#fff, 0.5));
-      background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%);
-
-      &::before, &::after { background-image: radial-gradient(#70a0bb 0%, #70a0bb 20%, #91c0dd 100%); }
+      // filter: drop-shadow(0 0 5px  rgba(#fff, 0.5));
+      background: #91c0dd;
     }
   }
 
@@ -236,8 +231,8 @@ footer {
   .showCloseBtn {
     position: fixed;
     right: 0;
-    width: 62px;
-    transition: width .1s .4s;
+    // width: 62px;
+    // transition: width .1s .4s;
 
     & > span:nth-child(2) { opacity: 0; }
 
@@ -245,18 +240,16 @@ footer {
     & > span:nth-child(3) {
       // right: 40px;
       right: 20px;
-      height: 10px;
+      height: 8px;
       width: 50px;
-      border-radius: 0;
-      // border: 2px solid transparent;
+      // border-radius: 0;
       background: #b3b3bb;
       transform: translate(15px) rotate(45deg);
     }
     & > span:nth-child(3) { transform: translate(15px) rotate(-45deg); }
 
     &:hover > span {
-      filter: none;
-      background: map_get($colorSet1, c5);
+      background: #91c0dd;
     }
   }
 
