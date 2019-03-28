@@ -1,6 +1,7 @@
 {
   "short_name": "Marek Ficht",
-  "name": "Marek Ficht - React App Page",
+  "name": "Marek Ficht React Page",
+  "description": "Welcome on my page!",
   "icons": [
     {
       "src": "favicon.ico",

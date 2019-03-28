@@ -124,11 +124,10 @@ footer {
     margin: 0 5px; }
 
 .nav {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100px;
   margin: 0 auto;
-  left: 0;
   top: 0;
   color: #bdbec7;
   display: flex;
@@ -272,12 +271,15 @@ footer {
   top: 0;
   left: 0;
   z-index: 2;
-  transition: all .4s; }
+  transition: all .2s;
+  height: 70px; }
   .sticky .logo {
     transform: scale(0.8); }
+  .sticky .showCloseBtn {
+    margin-top: 17px; }
 
 .container {
-  margin: 0 auto; }
+  margin: 90px auto 0; }
 
 .grid-item {
   color: #D6D7DC;
@@ -497,7 +499,9 @@ footer {
 @media (min-width: 1024px) {
   .nav {
     max-width: calc(1008px - (5*8px));
-    height: 110px; }
+    height: 110px;
+    margin: 0 auto;
+    position: relative; }
   .nav > button {
     display: none; }
   .nav header {
@@ -542,8 +546,7 @@ footer {
       width: 100%; }
   .sticky {
     background-color: unset;
-    position: unset;
-    top: unset;
+    position: relative;
     left: unset;
     z-index: unset;
     transition: unset; }
@@ -556,7 +559,7 @@ footer {
       height: 4px !important;
       width: 100% !important; }
   .container {
-    margin: 0 auto;
+    margin: -10px auto 0;
     max-width: 1008px; }
   .grid {
     grid-template-columns: repeat(5, 178px);

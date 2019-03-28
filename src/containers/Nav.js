@@ -7,7 +7,7 @@ class Nav extends Component {
     state = {
         showNavMobile: false,
         widthNavMobile: 1024,
-        isSticky: false,
+        sticky: false,
     };
 
     componentDidMount() {
@@ -32,9 +32,9 @@ class Nav extends Component {
         window.addEventListener('scroll', e => {
 
             if ( window.pageYOffset >= 110 ) {
-                this.setState({ isSticky: true })
+                this.setState({ sticky: true })
             } else {
-                this.setState({ isSticky: false })                
+                this.setState({ sticky: false })                
             }
         })
 
@@ -51,11 +51,11 @@ class Nav extends Component {
 
     render() {
 
-        const { showNavMobile, isSticky } = this.state;
-        const sticky = isSticky ? 'nav sticky' : 'nav';
+        const { showNavMobile, sticky } = this.state;
+        const isSticky = sticky ? 'nav sticky' : 'nav';
 
         return (
-            <nav className={ sticky } id='nav'>
+            <nav className={ isSticky } id='nav'>
 
                 <header className='logo'>
                     <Link to='/'>
