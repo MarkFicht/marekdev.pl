@@ -10,6 +10,8 @@ class AboutMe extends Component {
     }
 
     componentDidMount() {
+        window.scroll(0, 0);
+
         const loadingTime = setTimeout( () => {
 
             this.setState({ loading: false })
