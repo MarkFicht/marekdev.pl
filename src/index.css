@@ -265,18 +265,17 @@ footer {
   to {
     opacity: 1; } }
 
-.sticky {
-  background-color: rgba(0, 0, 0, 0.5);
+.sticky button {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  transition: all .2s;
-  height: 70px; }
-  .sticky .logo {
-    transform: scale(0.8); }
-  .sticky .showCloseBtn {
-    margin-top: 17px; }
+  right: 0; }
+  .sticky button::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: -20px;
+    height: 75%;
+    border-radius: 10px 0 0 10px / 15px;
+    background-color: rgba(0, 0, 0, 0.5); }
 
 .container {
   margin: 90px auto 0; }
@@ -544,14 +543,6 @@ footer {
     .nav > ul > li a:hover::after {
       height: 4px;
       width: 100%; }
-  .sticky {
-    background-color: unset;
-    position: relative;
-    left: unset;
-    z-index: unset;
-    transition: unset; }
-    .sticky .logo {
-      transform: unset; }
   .active-nav {
     color: #b3e1ff !important;
     filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.45)) !important; }

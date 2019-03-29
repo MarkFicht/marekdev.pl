@@ -320,20 +320,22 @@ footer {
   }
 }
 
+//---
 .sticky {
-  background-color: rgba(#000, .5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  transition: all .2s;
-  height: 70px;
 
-  & .logo { transform: scale(.8); }
+  button {
+    position: fixed;
+    right: 0;
 
-  .showCloseBtn {
-    // background-color: red;
-    margin-top: 17px;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      right: -20px;
+      height: 75%;
+      border-radius: 10px 0 0 10px / 15px;
+      background-color: rgba(#000, .5);
+    }
   }
 }
 
@@ -375,6 +377,11 @@ footer {
   &:nth-child(4n-2)::before { background: linear-gradient(315deg, rgba(#89ff00, $opacityBGLinearGradier1), rgba(#00bcd4, $opacityBGLinearGradier2)); }
   &:nth-child(4n-1)::before { background: linear-gradient(315deg, rgba(#e91e63, $opacityBGLinearGradier1), rgba(#5d02ff, $opacityBGLinearGradier2)); }
   &:nth-child(4n)::before { background: linear-gradient(315deg, rgba(#ff0000, $opacityBGLinearGradier1), rgba(#ffc107, $opacityBGLinearGradier2)); }
+
+  // &:nth-child(4n-3)::before { background: linear-gradient(315deg, rgba(#000057, $opacityBGLinearGradier1), rgba(#e64a19, $opacityBGLinearGradier2)); }
+  // &:nth-child(4n-2)::before { background: linear-gradient(315deg, rgba(#890000, $opacityBGLinearGradier1), rgba(#00bcd4, $opacityBGLinearGradier2)); }
+  // &:nth-child(4n-1)::before { background: linear-gradient(315deg, rgba(#e91e00, $opacityBGLinearGradier1), rgba(#5d02ff, $opacityBGLinearGradier2)); }
+  // &:nth-child(4n)::before { background: linear-gradient(315deg, rgba(#000000, $opacityBGLinearGradier1), rgba(#ffc107, $opacityBGLinearGradier2)); }
 }
 
 .grid-item {
@@ -620,16 +627,6 @@ footer {
     }
   }
 
-  .sticky {
-    background-color: unset;
-    position: relative;
-    left: unset;
-    z-index: unset;
-    transition: unset;
-
-    & .logo { transform: unset; }
-  }
-
   //---
   .active-nav {
     color: #b3e1ff !important;
@@ -688,19 +685,6 @@ footer {
       font-size: 34px;
     }
   }
-
-  // .nav .logo {
-  //   height: 100px;
-  //   width: 135px;
-
-  //   .letter-m,
-  //   .letter-f {
-  //     width: 70px;
-  //     height: 70px;
-  //   }
-  //   .letter-m { top: 5px; }
-  //   .letter-f { top: 20px; left: 60px; }
-  // }
 
   .container { max-width: 1308px; }
   .grid {
