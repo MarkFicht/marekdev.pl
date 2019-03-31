@@ -33,8 +33,81 @@ class Projects extends Component {
             <div className='loading container-subpage'>
                 <h3>Projekty</h3>
 
-                <section className=''>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <section className='projects-container'>
+                    <div className='grid-capsules'>
+
+                        <div className='grid-capsule grid-capsule-1'>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            <span className='half-capsule-up'>Reflex Game</span>
+                            <span className='half-capsule-down'>
+                                <p>ReactJS</p>
+                                <p>FireBase</p>
+                                <p>NPM and more</p>
+                            </span>
+                        </div>
+
+                        <div className='grid-capsule grid-capsule-2'>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            <span className='half-capsule-up'>CSS FUN</span>
+                            <span className='half-capsule-down'>
+                                <p>jQuery</p>
+                                <p>Webpack</p>
+                                <p>Babel & NPM and more</p>
+                            </span>
+                        </div>
+
+                        <div className='grid-capsule grid-capsule-3'>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <span className='half-capsule-up'>CSS FUN</span>
+                            <span className='half-capsule-down'>
+                                <p>jQuery</p>
+                                <p>Webpack</p>
+                                <p>Babel & NPM and more</p>
+                            </span>
+                        </div>
+
+                        <div className='grid-capsule grid-capsule-4'>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <span className='half-capsule-up'>CSS FUN</span>
+                            <span className='half-capsule-down'>
+                                <p>jQuery</p>
+                                <p>Webpack</p>
+                                <p>Babel & NPM and more</p>
+                            </span>
+                        </div>
+
+                        <div className='grid-capsule grid-capsule-5'>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <span className='half-capsule-up'>CSS FUN</span>
+                            <span className='half-capsule-down'>
+                                <p>jQuery</p>
+                                <p>Webpack</p>
+                                <p>Babel & NPM and more</p>
+                            </span>
+                        </div>
+
+                        <div className='grid-capsule grid-capsule-6'>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <span className='half-capsule-up'>CSS FUN</span>
+                            <span className='half-capsule-down'>
+                                <p>jQuery</p>
+                                <p>Webpack</p>
+                                <p>Babel & NPM and more</p>
+                            </span>
+                        </div>
+                    </div>
                 </section>
             </div>
         )

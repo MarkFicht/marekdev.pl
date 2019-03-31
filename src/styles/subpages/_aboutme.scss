@@ -42,7 +42,9 @@
 
 // $colorCard: tomato;
 // $colorCard: #099fb3;
-$colorCard: #21b2c5;
+$colorCard: #4a848b;
+$colorCard: #4f5f81;
+
 
 
 //---
@@ -208,8 +210,11 @@ $colorCard: #21b2c5;
 }
 
 @media (min-width: 1024px) {
+    .container-subpage > h3 { display: none; }
+    
     .card {
         width: 640px;
+        margin: 40px 0 20px;
     }
     .card > header {
         height: 60px;
