@@ -132,20 +132,16 @@ footer {
   .letter-f {
     width: 52px;
     height: 52px;
+    line-height: 52px;
     background-color: #63667e;
     color: map-get($colorSet1, c4);
     position: absolute;
     top: 9px;
     left: 5px;
     transform: rotate(-7deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 36px;
     font-weight: bold;
     z-index: 2;
-    /* fixed for center letters */
-    padding-bottom: 4px;
     transition: all .4s;
   }
 
@@ -383,15 +379,18 @@ footer {
     margin-top: 20px;
     // display: none;
     opacity: 0;
-    width: 150px;
-    height: 36px;
+    width: 168px;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
     position: absolute;
     bottom: 40%;
     transition: all .4s;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    letter-spacing: 1px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
     &::before {
       content: '';
@@ -633,6 +632,15 @@ footer {
   .grid-item-9 { grid-area: p4; }
   .grid-item-10 { grid-area: p5; }
   .grid-item-11 { grid-area: p6; }
+
+  .grid-item-3 > a,
+  .grid-item-5 > a,
+  .grid-item-6 > a,
+  .grid-item-7 > a,
+  .grid-item-8 > a,
+  .grid-item-9 > a,
+  .grid-item-10 > a,
+  .grid-item-11 > a { width: 146px; }
 
   footer { font-size: 26px; }
 }
