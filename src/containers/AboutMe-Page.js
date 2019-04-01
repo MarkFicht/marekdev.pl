@@ -34,8 +34,10 @@ class AboutMe extends Component {
 
         return (
             <div className='loading container-subpage'>
-                <h3>O mnie</h3>
-
+                <header>
+                    <h3>O mnie</h3>
+                </header>
+                
                 <section>
                     <div className='card'>
                         <header>
