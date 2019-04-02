@@ -40,9 +40,13 @@ class Projects extends Component {
                     <div className='grid-capsules'>
 
                         <div className='grid-capsule grid-capsule-1'>
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            <p>Gra multiplayer w czasie rzeczywistym, dla 2 osób online. Wygrywa gracz z lepszym refleksem. Są plany nad dalszym rozwojem - jak dodanie Redux, użycie funkcji w FireBase, itp.</p> 
+
+                            <div className='repo-links'>
+                                <a href='https://github.com/MarkFicht/reflex-game' target='_blank' rel="noopener noreferrer">GitHub</a>
+                                <a href='https://gra-reflex.firebaseapp.com/#/' target='_blank' rel="noopener noreferrer">DEMO</a>
+                            </div>
+
                             <span className='half-capsule-up'>Reflex Game</span>
                             <span className='half-capsule-down'>
                                 <p>ReactJS</p>
@@ -55,9 +59,13 @@ class Projects extends Component {
                         </div>
 
                         <div className='grid-capsule grid-capsule-2'>
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+                            <p>Repo z zaawansowanymi stylami w CSS. Znaleźć tu można obiekty 3D, które powstały bez JSa np. 'Future Gallery'. Strona posiada RWD i przyjazną nawigację.</p>  
+
+                            <div className='repo-links'>
+                                <a href='https://github.com/MarkFicht/css-fun' target='_blank' rel="noopener noreferrer">GitHub</a>
+                                <a href='https://markficht.github.io/css-fun/build/' target='_blank' rel="noopener noreferrer">DEMO</a>
+                            </div>
+
                             <span className='half-capsule-up'>CSS Fun</span>
                             <span className='half-capsule-down'>
                                 <p>jQuery</p>
@@ -70,9 +78,13 @@ class Projects extends Component {
                         </div>
 
                         <div className='grid-capsule grid-capsule-3'>
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <p>Gra singleplayer, gdzie zbieramy punkty i unikamy kolizji. Skupiłem się na paradygmacie obiektowym, zaś kod jest pisany w czystym JS.</p>
+
+                            <div className='repo-links'>
+                                <a href='https://github.com/MarkFicht/Workshop2-furry-game' target='_blank' rel="noopener noreferrer">GitHub</a>
+                                <a href='https://markficht.github.io/Workshop2-furry-game/' target='_blank' rel="noopener noreferrer">DEMO</a>
+                            </div>
+
                             <span className='half-capsule-up'>Furry Game</span>
                             <span className='half-capsule-down'>
                                 <p>VanilliaJS</p>
@@ -85,9 +97,12 @@ class Projects extends Component {
                         </div>
 
                         <div className='grid-capsule grid-capsule-4'>
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <p>Aplikacja SPA napisana w React, strona wizytówka. Repo dopiero budowane, pod Mobile First. W planach jest dodanie bazy danych oraz CMSa.</p>
+
+                            <div className='repo-links'>
+                                <a href='https://github.com/MarkFicht/karolina-site' target='_blank' rel="noopener noreferrer">GitHub</a>
+                            </div>
+
                             <span className='half-capsule-up'>Karolina Site</span>
                             <span className='half-capsule-down'>
                                 <p>ReactJS - SPA</p>
@@ -100,9 +115,12 @@ class Projects extends Component {
                         </div>
 
                         <div className='grid-capsule grid-capsule-5'>
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <p>Klasyczna To Do Lista. Celem było pokazanie zasad REST API, Ajax i Expressa. Za 'bazy danych' odpowiada plik *.json</p>
+
+                            <div className='repo-links'>
+                                <a href='https://github.com/MarkFicht/NodeJS-express-ajax-restapi' target='_blank' rel="noopener noreferrer">GitHub</a>
+                            </div>
+
                             <span className='half-capsule-up'>ToDo Node</span>
                             <span className='half-capsule-down'>
                                 <p>ExpressJS</p>
@@ -115,9 +133,13 @@ class Projects extends Component {
                         </div>
 
                         <div className='grid-capsule grid-capsule-6'>
-                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            <p>Aplikacja SPA napisana w React, na której się znajdujesz :). Strona wizytówka, gdzie celem była 'prostota' oraz coś innego niż szablony czy WP.</p>
+
+                            <div className='repo-links'>
+                                <a href='https://github.com/MarkFicht/marekdev.pl' target='_blank' rel="noopener noreferrer">GitHub</a>
+                                <a href='http://marekdev.pl' target='_blank' rel="noopener noreferrer">'DEMO'</a>
+                            </div>
+
                             <span className='half-capsule-up'>My Page</span>
                             <span className='half-capsule-down'>
                                 <p>ReactJS - SPA</p>

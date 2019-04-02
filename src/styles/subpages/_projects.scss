@@ -13,7 +13,7 @@ $capsuleColors: (
     display: flex;
     width: 100%;
     min-height: 300px;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 .grid-capsules {
@@ -22,11 +22,11 @@ $capsuleColors: (
     grid-template-rows: repeat(6, 400px);
     // grid-gap: 200px 40px;
     grid-gap: 200px 0;
-    margin: 120px 0;
+    margin: 124px 0;
 }
 
 .grid-capsule {
-    border: 1px solid blueviolet;
+    // border: 1px solid blueviolet;
     width: 300px;
     height: 100%;
     background-color: #9b9dac;
@@ -34,11 +34,42 @@ $capsuleColors: (
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: relative;
+
+    & > p {
+        font-size: 17px;
+        padding: 0 10px;
+    }
 
     &:hover {
        .half-capsule-up { top: -33%; }
        .half-capsule-down { bottom: -33%; }
+    }
+}
+
+.repo-links {
+    // border: 1px solid green;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 0;
+
+    & > a {
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 10px;
+        border-radius: 10px;
+        transition: all .3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -98,7 +129,8 @@ $capsuleColors: (
     justify-content: center;
     align-items: center;
     z-index: 1;
-    filter: drop-shadow(0 0 5px rgba(#000, .55));
+    filter: drop-shadow(0 0 5px rgba(#fff, .35));
+    cursor: pointer;
 
     &::before {
         content: '';
@@ -129,14 +161,19 @@ $capsuleColors: (
 }
 .half-capsule-down { 
     padding-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
     flex-direction: column;
     @include capsule(unset, -5%, 0 0 20px 20px, 5deg, unset, -27.5%); 
     @include capsuleColors(c1, bg);
 
-    & p { padding: 5px; }
+    & > p { padding: 5px; font-size: 18px; font-weight: bold; }
 }
+
+.grid-capsule-1 > .repo-links > a { color: map-get($capsuleColors, c1); background-color: map-get($capsuleColors, bg); border: 3px solid map-get($capsuleColors, c1); }
+.grid-capsule-2 > .repo-links > a { color: map-get($capsuleColors, c2); background-color: map-get($capsuleColors, bg); border: 3px solid map-get($capsuleColors, c2); }
+.grid-capsule-3 > .repo-links > a { color: map-get($capsuleColors, c3); background-color: map-get($capsuleColors, bg); border: 3px solid map-get($capsuleColors, c3); }
+.grid-capsule-4 > .repo-links > a { color: map-get($capsuleColors, c4); background-color: map-get($capsuleColors, bg); border: 3px solid map-get($capsuleColors, c4); }
+.grid-capsule-5 > .repo-links > a { color: map-get($capsuleColors, c5); background-color: map-get($capsuleColors, bg); border: 3px solid map-get($capsuleColors, c5); }
+.grid-capsule-6 > .repo-links > a { color: map-get($capsuleColors, c6); background-color: map-get($capsuleColors, bg); border: 3px solid map-get($capsuleColors, c6); }
 
 .grid-capsule-2 > .half-capsule-up { @include capsuleColors(bg, c2); }
 .grid-capsule-2 > .half-capsule-down { @include capsuleColors(c2, bg); }
@@ -175,10 +212,13 @@ $capsuleColors: (
 @media (min-width: 1024px) {
     .grid-capsule {
         width: 340px;
+
+        & > p { font-weight: 600; padding: 0 15px; }
     }
     .grid-capsules {
         grid-template-rows: repeat(6, 440px);
         grid-gap: 200px 60px;
+        margin: 134px 0;
     }
 
     .capsule-number > span { top: 0; }
