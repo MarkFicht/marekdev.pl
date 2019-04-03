@@ -312,7 +312,6 @@ code {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.35));
   cursor: pointer;
   color: antiquewhite; }
   .half-capsule-up::before {
@@ -344,7 +343,6 @@ code {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.35));
   cursor: pointer;
   color: tomato; }
   .half-capsule-down::before {
@@ -717,13 +715,13 @@ footer {
     right: -2px;
     transform: skew(1.5deg, 0.7deg); }
   .grid-item:nth-child(4n-3)::before {
-    background: linear-gradient(315deg, rgba(206, 50, 50, 0.65), #bb6932); }
+    background: linear-gradient(135deg, #fa7ea8, rgba(250, 126, 168, 0.66)); }
   .grid-item:nth-child(4n-2)::before {
-    background: linear-gradient(315deg, rgba(126, 201, 41, 0.65), #077567); }
+    background: linear-gradient(135deg, #a779e9, rgba(167, 121, 233, 0.66)); }
   .grid-item:nth-child(4n-1)::before {
-    background: linear-gradient(315deg, rgba(172, 59, 138, 0.65), #4b4eee); }
+    background: linear-gradient(135deg, #7886d7, rgba(120, 134, 215, 0.66)); }
   .grid-item:nth-child(4n)::before {
-    background: linear-gradient(315deg, rgba(200, 211, 43, 0.65), #a56f0a); }
+    background: linear-gradient(135deg, #b1835d, rgba(177, 131, 93, 0.66)); }
 
 .grid-item > h3 {
   position: absolute;
@@ -802,7 +800,7 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .23;
+  opacity: .63;
   transition: all .4s;
   transform: skew(1.5deg, 0.7deg);
   overflow: hidden; }
