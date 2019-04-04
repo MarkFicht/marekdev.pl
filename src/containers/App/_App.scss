@@ -408,6 +408,32 @@ footer {
     transition: all .4s;
   }
 
+  & > .contact-link {
+    // border: 1px solid red;
+    height: 46px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: map_get($colorSet1, c4);
+    opacity: 0;
+    transition: all .4s;
+
+    & > span {
+      // border: 1px solid blue;
+      font-size: 18px;
+      width: 230px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      text-align: left;
+      padding-left: 12px;
+    }
+  }
+  .my-icon {
+    width: 30px;
+    height: 30px;
+  }
+
   & > a {
     background-color: transparent;
     z-index: -1;
@@ -453,7 +479,7 @@ footer {
     }
   }
 
-  &:hover > h3 { top: 20%; }
+  &:hover > h3 { top: 22%; }
   &:hover > p { opacity: 1; }
   &:hover > a {
     z-index: 2;
@@ -462,6 +488,31 @@ footer {
     cursor: pointer;
   }
   &:hover .pic-skew { opacity: 0; }
+  &:hover > .contact-link { opacity: 1; z-index: 2; }
+}
+
+.arrow-icon {
+  position: absolute;
+  transform: rotate(-30deg) scale(2.5, 1.5);
+  z-index: 2;
+  top: -50px;
+  left: 300px;
+  width: 200px;
+  height: 200px;
+}
+
+.shake-1 { animation: shake .7s 5s forwards ease-in-out; }
+.shake-2 { animation: shake .7s 8s forwards ease-in-out; }
+.shake-3 { animation: shake .7s 11s forwards ease-in-out; }
+.shake-4 { animation: shake .7s 14s forwards ease-in-out; }
+.shake-5 { animation: shake .7s 17s forwards ease-in-out; }
+.shake-6 { animation: shake .7s 20s forwards ease-in-out; }
+
+@keyframes shake {
+  20% { transform: rotate(2deg); }
+  40% { transform: rotate(-2deg); }
+  60% { transform: rotate(2deg); }
+  80% { transform: rotate(-2deg); }
 }
 
 //---
@@ -570,6 +621,20 @@ footer {
 
   .grid-item-1 > p,
   .grid-item-4 > p { padding: 0 15px 5px; }
+
+  .grid-item-6 > h3, 
+  .grid-item-7 > h3, 
+  .grid-item-8 > h3, 
+  .grid-item-9 > h3, 
+  .grid-item-10 > h3, 
+  .grid-item-11 > h3 { font-size: 22px; }
+
+  .grid-item-6:hover > h3, 
+  .grid-item-7:hover > h3, 
+  .grid-item-8:hover > h3, 
+  .grid-item-9:hover > h3, 
+  .grid-item-10:hover > h3, 
+  .grid-item-11:hover > h3 { top: 26%; }
 
   footer { font-size: 24px; }
 }

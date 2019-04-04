@@ -8,6 +8,8 @@ import picSkills from '../img/skills.jpg';
 import picProjects from '../img/projects.jpg';
 import picResume from '../img/resume.jpg';
 import picContact from '../img/contact.jpg';
+import { FaEnvelope, FaGithub } from 'react-icons/fa';
+import { TiArrowBack } from "react-icons/ti";
 
 const textAboutMe = ['Hej, jestem Marek! Młodszy programista JS.', 'Przygoda z programowaniem zaczęła się 2 lata temu, po godzinach.', 'Rozwijam się w technologii ReactJS i nie tylko.', 'Jednym z celów zawodoych jest zostanie Full Stackiem.', 'W życiu staram się znaleźć balans i nie zamykać się na 1 tor myślenia. Póki co, wychodzi to nieźle.', 'Jeśli mam wolny czas, to najchętniej spędzam go na boisku, rywalizacji, grach czy medytacji.'];
 const textProjects = ['Znajdziesz tu fajne komercyjne prace :).', 'UWAGA! Nie tylko powszechne ToDoListy.'];
@@ -78,7 +80,14 @@ class Home extends Component {
 
                 <div className="grid-item grid-item-4">
                     <h3>KONTAKT</h3>
-                    <p>{ textAboutMe[0] }</p>           
+                    <div className='contact-link'>
+                        <FaEnvelope className='my-icon' />
+                        <span>marekficht@gmail.com</span>                       
+                    </div>
+                    <div className='contact-link'>
+                        <FaGithub className='my-icon' />
+                        <span>github.com/MarkFicht</span>
+                    </div>
                     <Link to="/kontakt">Zobacz więcej</Link>
                     
                     <div className='pic-skew'>
@@ -95,34 +104,34 @@ class Home extends Component {
                     </div>
                 </div>
 
-                <div className="grid-item grid-item-6">
-                    <h3>P1</h3>
-                    <Link to="/">Read more</Link>
+                <div className="grid-item grid-item-6 shake-1">
+                    <h3>-Reflex-</h3>
+                    <a href='https://github.com/MarkFicht/reflex-game' target='_blank' rel="noopener noreferrer">GitHub</a>
                 </div>
 
-                <div className="grid-item grid-item-7">
-                    <h3>P2</h3>
-                    <Link to="/">Read more</Link>
+                <div className="grid-item grid-item-7 shake-2">
+                    <h3>-CSS Fun-</h3>
+                    <a href='https://github.com/MarkFicht/css-fun' target='_blank' rel="noopener noreferrer">GitHub</a>
                 </div>
 
-                <div className="grid-item grid-item-8">
-                    <h3>P3</h3>
-                    <Link to="/">Read more</Link>
+                <div className="grid-item grid-item-8 shake-3">
+                    <h3>-Furry-</h3>
+                    <a href='https://github.com/MarkFicht/Workshop2-furry-game' target='_blank' rel="noopener noreferrer">GitHub</a>
                 </div>
 
-                <div className="grid-item grid-item-9">
-                    <h3>P4</h3>
-                    <Link to="/">Read more</Link>
+                <div className="grid-item grid-item-9 shake-4">
+                    <h3>-RWD Page-</h3>
+                    <a href='https://github.com/MarkFicht/karolina-site' target='_blank' rel="noopener noreferrer">GitHub</a>
                 </div>
 
-                <div className="grid-item grid-item-10">
-                    <h3>P5</h3>
-                    <Link to="/">Read more</Link>
+                <div className="grid-item grid-item-10 shake-5">
+                    <h3>-ToDo Node-</h3>
+                    <a href='https://github.com/MarkFicht/NodeJS-express-ajax-restapi' target='_blank' rel="noopener noreferrer">GitHub</a>
                 </div>
 
-                <div className="grid-item grid-item-11">
-                    <h3>P6</h3>
-                    <Link to="/">Read more</Link>
+                <div className="grid-item grid-item-11 shake-6">
+                    <h3>-My Page-</h3>
+                    <a href='https://github.com/MarkFicht/marekdev.pl' target='_blank' rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
         )
