@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 import ReactLoading from 'react-loading';
+import myCV from '../files/CV-styczen-2019.pdf';
 
 
 class CV extends Component {
 
     state = {
-        loading: true
+        loading: true,
+        numPages: null,
+        pageNumber: 1
     }
 
     componentDidMount() {
@@ -19,7 +22,13 @@ class CV extends Component {
         }, 500 );
     }
 
+    onDocumentLoadSuccess = ({ numPages }) => {
+        this.setState({ numPages });
+    };
+
     render() {
+
+        const { pageNumber, numPages } = this.state;
 
         if ( this.state.loading ) {
             return (
@@ -37,7 +46,15 @@ class CV extends Component {
                 
                 <section className=''>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                
+                    <form method="get" action={ myCV }>
+                        <button type="submit">Download!</button>
+                    </form>
+
+                    <a href={ myCV } download>Pobierz</a>
+
                 </section>
+                
             </div>
         )
     }
