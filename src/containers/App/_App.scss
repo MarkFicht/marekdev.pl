@@ -15,6 +15,7 @@ $colorSet1: (
 
 @import '../../styles/subpages/aboutme';
 @import '../../styles/subpages/projects';
+@import '../../styles/subpages/cv';
 
 *, *::before, *::after {
   margin: 0;
@@ -754,6 +755,8 @@ footer {
   .grid-item-9 > a,
   .grid-item-10 > a,
   .grid-item-11 > a { width: 146px; }
+
+  .grid-item-3 { & > p { display: none; } }
 
   footer { font-size: 26px; }
 }

@@ -9,11 +9,10 @@ import picProjects from '../img/projects.jpg';
 import picResume from '../img/resume.jpg';
 import picContact from '../img/contact.jpg';
 import { FaEnvelope, FaGithub } from 'react-icons/fa';
-import { TiArrowBack } from "react-icons/ti";
 
 const textAboutMe = ['Hej, jestem Marek! Młodszy programista JS.', 'Przygoda z programowaniem zaczęła się 2 lata temu, po godzinach.', 'Rozwijam się w technologii ReactJS i nie tylko.', 'Jednym z celów zawodoych jest zostanie Full Stackiem.', 'W życiu staram się znaleźć balans i nie zamykać się na 1 tor myślenia. Póki co, wychodzi to nieźle.', 'Jeśli mam wolny czas, to najchętniej spędzam go na boisku, rywalizacji, grach czy medytacji.'];
 const textProjects = ['Znajdziesz tu fajne komercyjne prace :).', 'UWAGA! Nie tylko powszechne ToDoListy.'];
-const textResume = [];
+const textResume = ['Zainteresowanych współpracą, zapraszam do przeglądu.'];
 const textContact = [];
 const textSkills = [];
 
@@ -70,7 +69,8 @@ class Home extends Component {
                 </div>
 
                 <div className="grid-item grid-item-3">
-                    <h3>CV</h3>        
+                    <h3>CV</h3>      
+                    <p>{ textResume[0] }</p>   
                     <Link to="/cv">Pobierz</Link>
 
                     <div className='pic-skew'>

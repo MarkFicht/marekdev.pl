@@ -34,9 +34,9 @@ class Projects extends Component {
                 <header>
                     <h3>Projekty</h3>
                 </header>
-                
 
-                <section className='projects-container'>
+                <section>
+
                     <div className='grid-capsules'>
 
                         <div className='grid-capsule grid-capsule-1'>
@@ -59,7 +59,7 @@ class Projects extends Component {
                         </div>
 
                         <div className='grid-capsule grid-capsule-2'>
-                            <p>Repo z zaawansowanymi stylami w CSS. Znaleźć tu można obiekty 3D, które powstały bez JSa np. 'Future Gallery'. Strona posiada RWD i przyjazną nawigację.</p>  
+                            <p>Repo z zaawansowanymi stylami w CSS. Znaleźć tu można obiekty 3D, które powstały bez JSa, np. 'Future Gallery'. Strona posiada RWD i przyjazną nawigację.</p>  
 
                             <div className='repo-links'>
                                 <a href='https://github.com/MarkFicht/css-fun' target='_blank' rel="noopener noreferrer">GitHub</a>
@@ -152,6 +152,7 @@ class Projects extends Component {
                         </div>
 
                     </div>
+                    
                 </section>
             </div>
         )

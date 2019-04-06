@@ -9,13 +9,6 @@ $capsuleColors: (
 );
 
 //---
-.projects-container {
-    display: flex;
-    width: 100%;
-    min-height: 300px;
-    // border: 1px solid red;
-}
-
 .grid-capsules {
     display: grid;
     grid-template-columns: 1fr;
