@@ -1,19 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "ef5d0bbc9f473f2dcdf4",
-    "url": "/static/css/main.07d50108.chunk.css"
+    "revision": "008917b7499cae3293c7",
+    "url": "/static/css/main.2653d9e0.chunk.css"
   },
   {
-    "revision": "ef5d0bbc9f473f2dcdf4",
-    "url": "/static/js/main.ef5d0bbc.chunk.js"
+    "revision": "008917b7499cae3293c7",
+    "url": "/static/js/main.008917b7.chunk.js"
   },
   {
-    "revision": "ca529c8b5d6a473173b4",
-    "url": "/static/js/1.ca529c8b.chunk.js"
+    "revision": "735db17abe897d856cda",
+    "url": "/static/js/1.735db17a.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
     "url": "/static/js/runtime~main.229c360f.js"
+  },
+  {
+    "revision": "a76b0dfb0105ce0d0f677249d01c040b",
+    "url": "/static/media/CV-styczen-2019.a76b0dfb.pdf"
   },
   {
     "revision": "0900c7ace9997c4fd6753b7e91959011",
@@ -44,7 +48,11 @@ self.__precacheManifest = [
     "url": "/static/media/face.c3f84c44.jpg"
   },
   {
-    "revision": "b808645889aa100b05722f1c60a25d34",
+    "revision": "e8d2714712954cb23cd00a8e5e863290",
+    "url": "/static/media/cv-pic.e8d27147.png"
+  },
+  {
+    "revision": "f9b81375bcf0934e5e50104e4f6385c0",
     "url": "/index.html"
   }
 ];

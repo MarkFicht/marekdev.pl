@@ -36,7 +36,27 @@ class Contact extends Component {
                 </header>
                 
                 <section className=''>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    
+                    <div className='contact-container'>
+
+                        <div className='envelope-wrapper'>
+
+                            <div className='envelope'>
+                                <div className='letter-container'>
+
+                                    <div className='letter'></div>
+
+                                </div>
+                                <div className='left-fold'></div>
+                                <div className='right-fold'></div>
+                            </div>
+                            <div className='top-fold'></div>
+                        
+                        </div>
+                        <div className='envelope-shadow'></div>
+
+                    </div>
+
                 </section>
             </div>
         )
