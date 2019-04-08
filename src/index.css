@@ -472,7 +472,7 @@ code {
   min-height: 300px;
   align-items: center;
   position: relative;
-  margin: 10px 0 20px; }
+  margin: 10px 0; }
   .cv-container > img {
     width: 700px;
     height: auto;
@@ -531,7 +531,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 25px; }
+  margin: 10px 0 40px; }
 
 .envelope-wrapper {
   width: 100%;
@@ -686,7 +686,7 @@ code {
   .contact-container {
     width: 520px;
     height: 540px;
-    margin: 10px 0 30px; }
+    margin: 10px 0 50px; }
   .envelope-wrapper {
     height: 260px; }
   .envelope {
@@ -735,7 +735,7 @@ code {
 
 @media (min-width: 1024px) {
   .contact-container {
-    margin: 30px 0 30px; } }
+    margin: 30px 0 60px; } }
 
 *, *::before, *::after {
   margin: 0;
@@ -771,13 +771,10 @@ body::-webkit-scrollbar-thumb {
   position: relative; }
 
 .container-loader {
-  height: 72vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center; }
-
-.loading {
-  min-height: 72vh; }
 
 .grid, .loading {
   opacity: 0;
@@ -794,21 +791,27 @@ body::-webkit-scrollbar-thumb {
   min-height: calc(100vh + 1px);
   overflow: hidden;
   background-attachment: fixed;
-  scroll-snap-align: start; }
+  scroll-snap-align: start;
+  position: relative; }
 
 footer {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   letter-spacing: 1px;
   color: #bdbec7;
   filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.25));
   font-size: 20px;
   font-weight: bold;
-  margin: 20px 0 35px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 0 15px; }
   footer > span {
-    margin: 0 5px; }
+    margin: 0 5px;
+    height: 46px; }
 
 .nav {
   position: absolute;
@@ -961,7 +964,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5); }
 
 .container {
-  margin: 90px auto 0; }
+  margin: 90px auto 100px; }
 
 .grid-item {
   color: #D6D7DC;
@@ -1319,7 +1322,7 @@ footer {
       height: 4px !important;
       width: 100% !important; }
   .container {
-    margin: -10px auto 0;
+    margin: -10px auto 90px;
     max-width: 1008px; }
   .grid {
     grid-template-columns: repeat(5, 178px);

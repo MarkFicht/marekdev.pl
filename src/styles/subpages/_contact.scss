@@ -6,6 +6,7 @@ $envelopeSlideDown: ( ($heightContact - $envelopeHeight) / 2 );
 $mainColorEnvelope: tomato;
 $mainColorEnvelopeElements: #b6484b;
 
+//---
 .contact-container {
     width: $widthContact;
     height: $heightContact;
@@ -14,7 +15,7 @@ $mainColorEnvelopeElements: #b6484b;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 25px;
+    margin: 10px 0 40px;
 }
 
 .envelope-wrapper {
@@ -222,7 +223,7 @@ $mainColorEnvelopeElements: #b6484b;
     .contact-container {
         width: 520px;
         height: 540px;
-        margin: 10px 0 30px;
+        margin: 10px 0 50px;
     }
 
     .envelope-wrapper { height: 260px; }
@@ -287,6 +288,6 @@ $mainColorEnvelopeElements: #b6484b;
 
 @media (min-width: 1024px) {
     .contact-container {
-        margin: 30px 0 30px;
+        margin: 30px 0 60px;
     }
 }
