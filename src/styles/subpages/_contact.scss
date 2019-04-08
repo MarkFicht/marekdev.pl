@@ -1,23 +1,32 @@
+$widthContact: 370px;
+$heightContact: 460px;
+$envelopeHeight: 200px;
+
+$envelopeSlideDown: ( ($heightContact - $envelopeHeight) / 2 );
+$mainColorEnvelope: tomato;
+$mainColorEnvelopeElements: #b6484b;
+
 .contact-container {
-    width: 380px;
-    height: 500px;
-    border: 1px solid red;
+    width: $widthContact;
+    height: $heightContact;
+    // border: 1px solid red;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0 25px;
 }
 
 .envelope-wrapper {
     width: 100%;
-    height: 200px;
-    border: 1px solid blue;
+    height: $envelopeHeight;
+    // border: 1px solid blue;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .7s;
-    // transform: translateY(150px);
+    // transition: all .7s;
+    animation: envelopeSlideDown .7s .7s ease-in-out forwards;
 }
 
 .envelope-shadow {
@@ -25,17 +34,18 @@
     position: absolute;
     // border: 1px solid blue;
     width: 70%;
-    height: 26px;
-    bottom: -32px;
+    height: 30px;
+    bottom: -35px;
     border-radius: 100%;
 	background: radial-gradient(rgba(#fff, .2), rgba(#fff, .0), rgba(#fff, .0));
-    transition: all .7s;
+    // transition: all .7s;
+    animation: shadowWidth .7s .7s ease-in-out forwards;
 }
 
 .envelope {
     width: 100%;
-    height: 200px;
-    background-color: tomato;
+    height: $envelopeHeight;
+    background-color: $mainColorEnvelope;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -48,12 +58,13 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 100px 190px 0 190px;
+    border-width: 100px ($widthContact/2) 0 ($widthContact/2);
     transform-origin: 50% 0%;
-    transition: transform .5s, z-index 0s .2s;
-    border-color: tomato transparent transparent transparent;
+    border-color: $mainColorEnvelope transparent transparent transparent;
     z-index: 2;
+    // transition: transform .5s, z-index 0s .2s;
     // transform: rotateX(180deg);
+    animation: openEnvelope .5s .7s ease-in-out forwards;
 }
 
 .left-fold {
@@ -63,8 +74,8 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 100px 0 100px 190px;
-    border-color: transparent transparent transparent lighten(tomato, 4%);
+    border-width: 100px 0 100px ($widthContact/2);
+    border-color: transparent transparent transparent lighten($mainColorEnvelope, 4%);
     z-index: 1;
 }
 
@@ -75,45 +86,207 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 100px 190px 100px 190px;
-    border-color: transparent lighten(tomato, 7%) lighten(tomato, 7%) transparent;
+    border-width: 100px ($widthContact/2) 100px ($widthContact/2);
+    border-color: transparent lighten($mainColorEnvelope, 7%) lighten($mainColorEnvelope, 7%) transparent;
     z-index: 1;
 }
 
 .letter-container {
-    width: 330px;
-    height: 500px;
+    width: $widthContact - 40px;
+    height: $heightContact;
     position: absolute;
     bottom: 0;
     z-index: 1;
     overflow: hidden;
-    border: 1px solid greenyellow;
+    // border: 1px solid greenyellow;
 }
 
 .letter {
     position: absolute;
     width: 100%;
-    height: 500px;
+    height: $heightContact;
     background-color: #eee;
-    border: 1px solid green;
+    // border: 1px solid green;
     bottom: -315px;
     z-index: 1;
-    transition: all .6s .4s;
+    display: flex;
+    flex-direction: column;
+    // transition: all .6s .4s;
+    animation: letterSlideUp .6s 1.1s ease-in-out forwards;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 16px;
+		width: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            $mainColorEnvelopeElements, $mainColorEnvelopeElements 13px,
+            transparent 13px, transparent 28px
+        );
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        right: 30px;
+        bottom: 120px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: $mainColorEnvelopeElements;
+        opacity: .7;
+    }
+
+    & .contact-link:first-child { margin: 40px 0 10px; }
+
+    & .contact-link {
+        // border: 1px solid red;
+        z-index: 1;
+        color: lighten($mainColorEnvelope, 4%);
+        margin: 10px 0;
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .my-icon {
+            // border: 1px solid blue;
+            height: 40px;
+            width: 40px;
+            margin-left: 5px;
+        }
+        & span {
+            // border: 1px solid green;
+            width: 260px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+    }
 }
 
-.envelope-wrapper:hover {
-    transform: translateY(150px);
+//---
+@keyframes envelopeSlideDown {
+    to { transform: translateY($envelopeSlideDown); }
+}
 
-    .top-fold {
-        transform: rotateX(180deg);
-        z-index: 0;
+@keyframes openEnvelope {
+    to { transform: rotateX(180deg); z-index: 0; }
+}
+
+@keyframes letterSlideUp {
+    to { bottom: 0; }
+}
+
+@keyframes shadowWidth {
+    to { width: 160%; }
+}
+
+// .envelope-wrapper:hover {
+//     transform: translateY($envelopeSlideDown);
+
+//     .top-fold {
+//         transform: rotateX(180deg);
+//         z-index: 0;
+//     }
+
+//     .letter {
+//         bottom: 0;
+//     }
+
+//     & ~ .envelope-shadow {
+//         width: 160%;
+//     }
+// }
+
+//***************
+//--- RWD
+//***************
+@media (min-width: 620px) {
+    .contact-container {
+        width: 440px;
     }
 
+    .top-fold { border-width: 100px 220px 0 220px; }
+    .left-fold { border-width: 100px 0 100px 220px; }
+    .right-fold { border-width: 100px 220px 100px 220px; }
+
+    .letter-container { width: 390px; }
+}
+
+@media (min-width: 778px) {
+    .contact-container {
+        width: 520px;
+        height: 540px;
+        margin: 10px 0 30px;
+    }
+
+    .envelope-wrapper { height: 260px; }
+    .envelope { height: 260px; }
+    .envelope-shadow {
+        height: 36px;
+        bottom: -42px;
+    }
+
+    // .envelope-wrapper:hover {
+    //     transform: translateY(140px);
+    // }
+    @keyframes envelopeSlideDown {
+    to { transform: translateY(140px); }
+}
+
+    .top-fold { border-width: 130px 260px 0 260px; }
+    .left-fold { border-width: 130px 0 130px 260px; }
+    .right-fold { border-width: 130px 260px 130px 260px; }
+
+    .letter-container { width: 450px; height: 540px; }
     .letter {
-        bottom: 0;
-    }
+        height: 540px; 
+        bottom: -350px; 
 
-    & ~ .envelope-shadow {
-        width: 160%;
+        &::before {
+            height: 20px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                $mainColorEnvelopeElements, $mainColorEnvelopeElements 16px,
+                transparent 16px, transparent 32px
+            );
+        }
+        &::after {
+            right: 42px;
+            bottom: 156px;
+            width: 80px;
+            height: 80px;
+        }
+
+        & .contact-link:first-child { margin: 46px 0 12px; }
+
+        & .contact-link {
+            margin: 12px 0;
+            height: 46px;
+
+            & .my-icon {
+                height: 46px;
+                width: 46px;
+                margin-left: 0;
+            }
+            & span {
+                width: 300px;
+                padding-left: 16px;
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-container {
+        margin: 30px 0 30px;
     }
 }

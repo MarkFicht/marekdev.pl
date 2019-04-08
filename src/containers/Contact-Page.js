@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import ReactLoading from 'react-loading';
 
+import { FaEnvelope, FaGithub, FaLinkedin, FaPhoneSquare } from 'react-icons/fa';
+
 
 class Contact extends Component {
 
@@ -44,7 +46,24 @@ class Contact extends Component {
                             <div className='envelope'>
                                 <div className='letter-container'>
 
-                                    <div className='letter'></div>
+                                    <div className='letter'>
+                                        <div className='contact-link'>
+                                            <FaEnvelope className='my-icon' />
+                                            <span>marekficht@gmail.com</span>
+                                        </div>
+                                        <div className='contact-link'>
+                                            <FaGithub className='my-icon' />
+                                            <span>github.com/MarkFicht</span>
+                                        </div>
+                                        <div className='contact-link'>
+                                            <FaLinkedin className='my-icon' />
+                                            <span>linkedin.com/in/marek-ficht</span>
+                                        </div>
+                                        <div className='contact-link'>
+                                            <FaPhoneSquare className='my-icon' />
+                                            <span>663 534 659</span>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div className='left-fold'></div>
