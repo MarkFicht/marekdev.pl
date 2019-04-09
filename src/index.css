@@ -139,11 +139,11 @@ code {
 
 @keyframes shadowStyleCard {
   from {
-    box-shadow: 0 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 rgba(255, 255, 255, 0.1);
     top: 7px;
     left: 7px; }
   to {
-    box-shadow: 14px 14px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 14px rgba(255, 255, 255, 0.1);
     top: -7px;
     left: -7px; } }
 
@@ -495,28 +495,46 @@ code {
   background-color: transparent; }
   .cv-btns > a,
   .cv-btns button[type=submit] {
-    width: 180px;
-    height: 80px;
-    background-color: tomato;
-    border-radius: 15px;
-    color: antiquewhite;
-    font-size: 24px;
-    cursor: pointer; }
+    width: 220px;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(135deg, #fa7ea8, #a779e9);
+    border-radius: 20px;
+    color: #faf5eb;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all .4s;
+    background-size: 400% 400%;
+    animation: animeBtn 4s infinite ease-in-out; }
     .cv-btns > a:hover,
     .cv-btns button[type=submit]:hover {
-      background-color: #ff745b;
-      color: #faf5eb; }
+      transform: scale(1.1); }
   .cv-btns button[type=submit] {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     outline: none;
     border: none; }
+
+@keyframes animeBtn {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 @media (min-width: 778px) {
   .cv-container > img {
     display: flex; }
   .cv-btns {
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.66); } }
+    background-color: rgba(0, 0, 0, 0.66); }
+    .cv-btns > a,
+    .cv-btns button[type=submit] {
+      width: 300px;
+      height: 120px;
+      font-size: 34px;
+      letter-spacing: 2px;
+      margin-bottom: 70px; } }
 
 @media (min-width: 1024px) {
   .cv-container {
@@ -555,7 +573,7 @@ code {
 .envelope {
   width: 100%;
   height: 200px;
-  background-color: tomato;
+  background-color: #bb6164;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -569,7 +587,7 @@ code {
   border-style: solid;
   border-width: 100px 185px 0 185px;
   transform-origin: 50% 0%;
-  border-color: tomato transparent transparent transparent;
+  border-color: #bb6164 transparent transparent transparent;
   z-index: 2;
   animation: openEnvelope .5s .7s ease-in-out forwards; }
 
@@ -581,7 +599,7 @@ code {
   height: 0;
   border-style: solid;
   border-width: 100px 0 100px 185px;
-  border-color: transparent transparent transparent #ff745b;
+  border-color: transparent transparent transparent #c37375;
   z-index: 1; }
 
 .right-fold {
@@ -592,7 +610,7 @@ code {
   height: 0;
   border-style: solid;
   border-width: 100px 185px 100px 185px;
-  border-color: transparent #ff816b #ff816b transparent;
+  border-color: transparent #c77e80 #c77e80 transparent;
   z-index: 1; }
 
 .letter-container {
@@ -619,7 +637,7 @@ code {
     top: 0;
     height: 16px;
     width: 100%;
-    background: repeating-linear-gradient(-45deg, #b6484b, #b6484b 13px, transparent 13px, transparent 28px); }
+    background: repeating-linear-gradient(-45deg, #aa484b, #aa484b 13px, transparent 13px, transparent 28px); }
   .letter::after {
     content: '';
     position: absolute;
@@ -628,13 +646,13 @@ code {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: #b6484b;
-    opacity: .7; }
+    background-color: #aa484b;
+    opacity: .85; }
   .letter .contact-link:first-child {
     margin: 40px 0 10px; }
   .letter .contact-link {
     z-index: 1;
-    color: #ff745b;
+    color: #be686b;
     margin: 10px 0;
     height: 40px;
     width: 100%;
@@ -712,7 +730,7 @@ code {
     .letter::before {
       height: 20px;
       width: 100%;
-      background: repeating-linear-gradient(-45deg, #b6484b, #b6484b 16px, transparent 16px, transparent 32px); }
+      background: repeating-linear-gradient(-45deg, #aa484b, #aa484b 16px, transparent 16px, transparent 32px); }
     .letter::after {
       right: 42px;
       bottom: 156px;

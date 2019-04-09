@@ -35,22 +35,44 @@
 
     & > a,
     button[type=submit] {
-        width: 180px;
-        height: 80px;
-        background-color: tomato;
-        border-radius: 15px;
-        color: rgba(250, 235, 215, 1);
-        font-size: 24px;
+        width: 220px;
+        height: 100px;
+        line-height: 100px;
+        // background-color: tomato;
+        background: linear-gradient(135deg, rgba(#FA7EA8 , 1), rgba(#A779E9 , 1));
+        border-radius: 20px;
+        color: rgba(250, 245, 235, 1);
+        font-size: 30px;
         cursor: pointer;
+        transition: all .4s;
+        background-size: 400% 400%;
+        animation: animeBtn 4s infinite ease-in-out;
 
-        &:hover { background-color: lighten(tomato, 4%); color: rgba(250, 245, 235, 1); }
+        &:hover { 
+            transform: scale(1.1); 
+            // background: linear-gradient(135deg, rgba(#A779E9 , 1), rgba(#FA7EA8 , 1));
+            // background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB); 
+            // animation: animeBtn 4s infinite ease-in-out;
+        }
     }
 
     button[type=submit] {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         outline: none;
         border: none;
     }
+}
+
+@keyframes animeBtn {
+    0% {
+        background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 //***************
@@ -64,6 +86,15 @@
     .cv-btns { 
         opacity: 0; 
         background-color: rgba(#000, .66);
+
+        & > a,
+        button[type=submit] {
+            width: 300px;
+            height: 120px;
+            font-size: 34px;
+            letter-spacing: 2px;
+            margin-bottom: 70px;
+        }
     }
 }
 
