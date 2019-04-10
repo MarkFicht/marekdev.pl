@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import ReactLoading from 'react-loading';
-import myCV from '../files/CV-styczen-2019.pdf';
+import myCV from '../files/cv-file.pdf';
 import imgCV from '../files/cv-pic.png';
 
 
