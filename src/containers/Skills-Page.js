@@ -35,8 +35,30 @@ class Skills extends Component {
                     <h3>Skills</h3>
                 </header>
                 
-                <section className=''>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <section>
+                    <div className='grid-skills-box'>
+
+                        <div className='grid-skill'>
+                            <div className='skill-box'>
+                                <div className='bg-technology'>
+                                    <div className='bg-technology__text'>JS</div>
+                                </div>
+                                <div className='svg-technology'>JS img</div>
+                                <div className='star-technology'>gold</div>
+                                <div className='description-technology'>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='grid-skill'>
+                            2
+                        </div>
+
+                    </div>
                 </section>
             </div>
         )
