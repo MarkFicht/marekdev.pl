@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import ReactLoading from 'react-loading';
+import ReactLoading from 'react-loading'
+import jsImg from '../img/js-logo.png'
+import htmlImg from '../img/html-logo.png'
+import cssImg from '../img/css-logo.png'
+import otherImg from '../img/other-logo (3).png'
 
 
 class Skills extends Component {
@@ -38,12 +42,12 @@ class Skills extends Component {
                 <section>
                     <div className='grid-skills-box'>
 
-                        <div className='grid-skill'>
+                        <div className='grid-skill grid-skill-1'>
                             <div className='skill-box'>
                                 <div className='bg-technology'>
                                     <div className='bg-technology__text'>JS</div>
                                 </div>
-                                <div className='svg-technology'>JS img</div>
+                                <div className='svg-technology' style={{ backgroundImage: `url(${jsImg})` }}></div>
                                 <div className='star-technology'>gold</div>
                                 <div className='description-technology'>
                                     <p>React</p>
@@ -54,8 +58,52 @@ class Skills extends Component {
                             </div>
                         </div>
 
-                        <div className='grid-skill'>
-                            2
+                        <div className='grid-skill grid-skill-2'>
+                            <div className='skill-box'>
+                                <div className='bg-technology'>
+                                    <div className='bg-technology__text'>HTML</div>
+                                </div>
+                                <div className='svg-technology' style={{ backgroundImage: `url(${htmlImg})` }}></div>
+                                <div className='star-technology'>gold</div>
+                                <div className='description-technology'>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='grid-skill grid-skill-3'>
+                            <div className='skill-box'>
+                                <div className='bg-technology'>
+                                    <div className='bg-technology__text'>CSS</div>
+                                </div>
+                                <div className='svg-technology' style={{ backgroundImage: `url(${cssImg})` }}></div>
+                                <div className='star-technology'>gold</div>
+                                <div className='description-technology'>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='grid-skill grid-skill-4'>
+                            <div className='skill-box'>
+                                <div className='bg-technology'>
+                                    <div className='bg-technology__text'>Inne</div>
+                                </div>
+                                <div className='svg-technology' style={{ backgroundImage: `url(${otherImg})` }}></div>
+                                <div className='star-technology'>gold</div>
+                                <div className='description-technology'>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                    <p>React</p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

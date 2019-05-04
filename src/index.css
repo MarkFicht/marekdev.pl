@@ -217,7 +217,7 @@ code {
 .grid-skills-box {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 560px);
+  grid-template-rows: repeat(4, 560px);
   border: 1px solid red;
   grid-gap: 10px 0; }
 
@@ -239,8 +239,24 @@ code {
   border-radius: 20px;
   position: relative; }
 
+.grid-skill-1 .bg-technology {
+  background: linear-gradient(#dfa12f, #a86b21); }
+
+.grid-skill-2 .bg-technology {
+  background: linear-gradient(#802e19, #571d0f); }
+
+.grid-skill-3 .bg-technology {
+  background: linear-gradient(#2b2bdb, #2626a7); }
+
+.grid-skill-4 .bg-technology {
+  background: linear-gradient(#794579, #664386); }
+
+.grid-skill-2 .bg-technology__text,
+.grid-skill-4 .bg-technology__text {
+  bottom: 40px;
+  right: 20px; }
+
 .bg-technology {
-  background: linear-gradient(orange, darkorange);
   border-radius: 20px 20px 0 20px;
   position: absolute;
   right: 0;
@@ -252,7 +268,7 @@ code {
 
 .bg-technology__text {
   transform: skewY(-20deg);
-  font-size: 42px;
+  font-size: 36px;
   font-weight: bold;
   color: #fefefe;
   position: absolute;
@@ -262,17 +278,19 @@ code {
 .svg-technology {
   position: relative;
   left: 50%;
-  top: -30px;
-  width: 120px;
-  height: 120px;
-  border: 3px solid blue;
+  top: -40px;
+  width: 180px;
+  height: 180px;
   z-index: 2;
-  transform: translate(-50%); }
+  transform: translate(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
 
 .star-technology {
   position: relative;
   left: 40px;
-  top: 40px;
+  top: -20px;
   width: 60px;
   height: 60px;
   border: 3px solid blue;
@@ -282,7 +300,7 @@ code {
 .description-technology {
   position: relative;
   left: 50%;
-  top: 56px;
+  top: -5px;
   width: 250px;
   height: 120px;
   border: 3px solid blue;

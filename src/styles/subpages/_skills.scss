@@ -1,7 +1,7 @@
 .grid-skills-box {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 560px);
+    grid-template-rows: repeat(4, 560px);
     border: 1px solid red;
     grid-gap: 10px 0;
     // margin: 124px 0;
@@ -28,8 +28,15 @@
     position: relative;
 }
 
+.grid-skill-1 .bg-technology { background: linear-gradient(rgb(223, 161, 47), rgb(168, 107, 33)); }
+.grid-skill-2 .bg-technology { background: linear-gradient(rgb(128, 46, 25), rgb(87, 29, 15)); }
+.grid-skill-3 .bg-technology { background: linear-gradient(rgb(43, 43, 219), rgb(38, 38, 167)); }
+.grid-skill-4 .bg-technology { background: linear-gradient(rgb(121, 69, 121), rgb(102, 67, 134)); }
+
+.grid-skill-2 .bg-technology__text,
+.grid-skill-4 .bg-technology__text { bottom: 40px; right: 20px; }
+
 .bg-technology {
-    background: linear-gradient(orange, darkorange);
     border-radius: 20px 20px 0 20px;
     position: absolute;
     right: 0;
@@ -42,7 +49,7 @@
 
 .bg-technology__text {
     transform: skewY(-20deg);
-    font-size: 42px;
+    font-size: 36px;
     font-weight: bold;
     color: #fefefe;
     position: absolute;
@@ -53,18 +60,23 @@
 .svg-technology {
     position: relative;
     left: 50%;
-    top: -30px;
-    width: 120px;
-    height: 120px;
-    border: 3px solid blue;
+    top: -40px;
+    width: 180px;
+    height: 180px;
+    // border: 3px solid blue;
     z-index: 2;
     transform: translate(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    // background-color: rgb(87, 65, 25);
+    // color: orange;
 }
 
 .star-technology {
     position: relative;
     left: 40px;
-    top: 40px;
+    top: -20px;
     width: 60px;
     height: 60px;
     border: 3px solid blue;
@@ -75,7 +87,7 @@
 .description-technology {
     position: relative;
     left: 50%;
-    top: 56px;
+    top: -5px;
     width: 250px;
     height: 120px;
     border: 3px solid blue;
