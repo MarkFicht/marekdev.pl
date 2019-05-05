@@ -218,11 +218,9 @@ code {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 560px);
-  border: 1px solid red;
   grid-gap: 10px 0; }
 
 .grid-skill {
-  border: 1px solid blueviolet;
   width: 380px;
   height: 100%;
   color: azure;
@@ -235,7 +233,7 @@ code {
 .skill-box {
   background-color: silver;
   width: 300px;
-  height: 380px;
+  height: 400px;
   border-radius: 20px;
   position: relative; }
 
@@ -246,7 +244,7 @@ code {
   background: linear-gradient(#802e19, #571d0f); }
 
 .grid-skill-3 .bg-technology {
-  background: linear-gradient(#2b2bdb, #2626a7); }
+  background: linear-gradient(#373785, #292970); }
 
 .grid-skill-4 .bg-technology {
   background: linear-gradient(#794579, #664386); }
@@ -261,13 +259,13 @@ code {
   position: absolute;
   right: 0;
   width: 190px;
-  height: 250px;
-  bottom: 180px;
-  transform: skewY(20deg);
+  height: 240px;
+  bottom: 205px;
+  transform: skewY(15deg);
   z-index: 1; }
 
 .bg-technology__text {
-  transform: skewY(-20deg);
+  transform: skewY(-15deg);
   font-size: 36px;
   font-weight: bold;
   color: #fefefe;
@@ -289,26 +287,30 @@ code {
 
 .star-technology {
   position: relative;
-  left: 40px;
-  top: -20px;
+  left: 35px;
+  top: -10px;
   width: 60px;
   height: 60px;
-  border: 3px solid blue;
   z-index: 2;
-  color: #606060; }
+  color: #606060;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .description-technology {
   position: relative;
   left: 50%;
-  top: -5px;
+  top: 5px;
   width: 250px;
-  height: 120px;
-  border: 3px solid blue;
+  min-height: 20px;
   z-index: 2;
   transform: translate(-50%); }
   .description-technology > p {
     color: #606060;
-    font-weight: 500; }
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 0 0 3px 20px; }
 
 .grid-capsules {
   display: grid;
