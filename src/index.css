@@ -218,7 +218,8 @@ code {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 560px);
-  grid-gap: 10px 0; }
+  grid-gap: 10px;
+  margin-top: 25px; }
 
 .grid-skill {
   width: 380px;
@@ -252,7 +253,7 @@ code {
 .grid-skill-2 .bg-technology__text,
 .grid-skill-4 .bg-technology__text {
   bottom: 40px;
-  right: 20px; }
+  right: 17px; }
 
 .bg-technology {
   border-radius: 20px 20px 0 20px;
@@ -311,6 +312,16 @@ code {
     letter-spacing: 1px;
     text-align: left;
     padding: 0 0 3px 20px; }
+
+@media (min-width: 778px) {
+  .grid-skills-box {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 560px); } }
+
+@media (min-width: 1678px) {
+  .grid-skills-box {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 560px; } }
 
 .grid-capsules {
   display: grid;
