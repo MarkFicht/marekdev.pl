@@ -40,12 +40,10 @@
   },
   "reactSnapshot": {
     "include": [
-      "/other-path",
-      "/another/nested-path"
+      "/not-found"
     ],
     "exclude": [
-      "/signup",
-      "/other-path/exclude-me/**"
+      "/signup"
     ],
     "snapshotDelay": 300
   }
