@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import App from './containers/App/App';
 import './index.css';
 
@@ -9,4 +10,8 @@ import './index.css';
 // import { faCheckCircle, faTimesCircle, faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons'
 // library.add(faCheckCircle, faTimesCircle, faVolumeUp, faVolumeOff);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
+render(
+    <App />,
+    document.getElementById('root')
+);
