@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Link, Switch, NavLink } from 'react-router-dom'
+import { HashRouter, Route, Link, Switch, NavLink } from 'react-router-dom'
 
 /** This pattern is downloaded from www.subtlepatterns.com */
 import bgImg from '../../img/bg.png'
@@ -23,7 +23,7 @@ class App extends Component {
   console.log('Pattern is downloaded from www.subtlepatterns.com');
 
     return (
-      <BrowserRouter>
+      <HashRouter >
         <div className="App" style={{ backgroundImage: `url("${bgImg}")` }}>
           <Nav />
 
@@ -42,7 +42,7 @@ class App extends Component {
 
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter >
     )
   }
 }
