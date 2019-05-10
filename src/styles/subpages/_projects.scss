@@ -12,7 +12,7 @@ $capsuleColors: (
 .grid-capsules {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 400px);
+    grid-template-rows: repeat(6, 430px);
     // grid-gap: 200px 40px;
     grid-gap: 200px 0;
     margin: 124px 0;
@@ -20,7 +20,8 @@ $capsuleColors: (
 
 .grid-capsule {
     // border: 1px solid blueviolet;
-    width: 300px;
+    border-radius: 15px;
+    width: 260px;
     height: 100%;
     background-color: #9b9dac;
     color: azure;
@@ -29,15 +30,16 @@ $capsuleColors: (
     align-items: center;
     flex-direction: column;
     position: relative;
+    margin-left: 50px;
 
     & > p {
-        font-size: 17px;
+        font-size: 16px;
         padding: 0 10px;
     }
 
     &:hover {
-       .half-capsule-up { top: -33%; }
-       .half-capsule-down { bottom: -33%; }
+       .half-capsule-up { top: -26%; }
+       .half-capsule-down { bottom: -27%; }
     }
 }
 
@@ -110,8 +112,8 @@ $capsuleColors: (
 
 //---
 @mixin capsule($top, $bottom, $bor-radius, $skew, $top-before, $bottom-before) {
-    width: 110%;
-    height: 60%;
+    width: 105%;
+    height: 56%;
     position: absolute;
     top: $top;
     bottom: $bottom;
@@ -149,13 +151,13 @@ $capsuleColors: (
     padding-bottom: 25px;  
     font-size: 30px; 
     font-weight: bold;
-    @include capsule(-5%, unset, 20px 20px 0 0, 5deg, -27.5%, unset); 
+    @include capsule(-1%, unset, 20px 20px 0 0, 5deg, -27.5%, unset); 
     @include capsuleColors(bg, c1);
 }
 .half-capsule-down { 
     padding-top: 10px;
     flex-direction: column;
-    @include capsule(unset, -5%, 0 0 20px 20px, 5deg, unset, -27.5%); 
+    @include capsule(unset, -2%, 0 0 20px 20px, 5deg, unset, -27.5%); 
     @include capsuleColors(c1, bg);
 
     & > p { padding: 5px; font-size: 18px; font-weight: bold; }
@@ -183,6 +185,53 @@ $capsuleColors: (
 .grid-capsule-6 > .half-capsule-up { @include capsuleColors(bg, c6); }
 .grid-capsule-6 > .half-capsule-down { @include capsuleColors(c6, bg); }
 
+//---
+.capsules-nav {
+    // border: 1px solid red;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 2;
+    left: -100px;
+    animation: showSideNav .6s 1s forwards ease-in-out;
+
+    & > ul {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        list-style: none;
+    }
+
+    & > ul > li {
+        background-color: map-get($capsuleColors, c1);
+        width: 60px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 0 15px 15px 0;
+        left: -20px;
+        font-size: 22px;
+        font-weight: bold;
+        padding-left: 13px;
+        transition: .4s all;
+        margin-bottom: 2px;
+
+        &:hover { left: 0; }
+    }
+
+    & > ul > li:nth-child(2) { background-color: map-get($capsuleColors, c2); }
+    & > ul > li:nth-child(3) { background-color: map-get($capsuleColors, c3); }
+    & > ul > li:nth-child(4) { background-color: map-get($capsuleColors, c4); }
+    & > ul > li:nth-child(5) { background-color: map-get($capsuleColors, c5); }
+    & > ul > li:nth-child(6) { background-color: map-get($capsuleColors, c6); }
+}
+
+@keyframes showSideNav {
+    to { left: 0; }
+}
 
 //***************
 //--- RWD
@@ -204,15 +253,28 @@ $capsuleColors: (
 
 @media (min-width: 1024px) {
     .grid-capsule {
-        width: 340px;
+        width: 300px;
 
-        & > p { font-weight: 600; padding: 0 15px; }
+        & > p { font-weight: 600; padding: 0 20px; }
     }
     .grid-capsules {
-        grid-template-rows: repeat(6, 440px);
-        grid-gap: 200px 60px;
+        grid-template-rows: repeat(6, 450px);
+        grid-gap: 200px 50px;
         margin: 134px 0;
     }
 
     .capsule-number > span { top: 0; }
+}
+
+@media (min-width: 1440px) {
+    .grid-capsule {
+        width: 310px;
+
+        & > p { font-weight: 600; padding: 0 25px; }
+    }
+    .grid-capsules {
+        grid-template-rows: repeat(6, 470px);
+        grid-gap: 200px 60px;
+        margin: 134px 0;
+    }
 }

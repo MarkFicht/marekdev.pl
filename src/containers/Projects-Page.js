@@ -6,17 +6,24 @@ import ReactLoading from 'react-loading';
 class Projects extends Component {
 
     state = {
-        loading: true
+        loading: true,
+        positionY: null
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         window.scroll(0, 0);
+        // let posY = document.querySelector('.grid-capsule-1').offsetTop
+        // console.log(posY)
 
         const loadingTime = setTimeout( () => {
 
             this.setState({ loading: false })
             clearTimeout(loadingTime);
         }, 500 );
+    }
+
+    componentDidUpdate = () => {
+        
     }
 
     render() {
@@ -35,12 +42,23 @@ class Projects extends Component {
                     <h3>Projekty</h3>
                 </header>
 
+                <sidebar className='capsules-nav'>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                    </ul>
+                </sidebar>
+
                 <section>
 
                     <div className='grid-capsules'>
 
                         <div className='grid-capsule grid-capsule-1'>
-                            <p>Gra multiplayer w czasie rzeczywistym, dla 2 osób online. Wygrywa gracz z lepszym refleksem. Są plany nad dalszym rozwojem - jak dodanie Redux, użycie funkcji w FireBase, itp.</p> 
+                            <p>Gra multiplayer w czasie rzeczywistym. Wygrywa gracz z lepszym refleksem. Są plany nad dalszym rozwojem( Dodanie Redux, użycie funkcji w FireBase, Context API, itp. )</p> 
 
                             <div className='repo-links'>
                                 <a href='https://github.com/MarkFicht/reflex-game' target='_blank' rel="noopener noreferrer">GitHub</a>
