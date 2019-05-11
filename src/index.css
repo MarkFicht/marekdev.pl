@@ -562,7 +562,7 @@ code {
     flex-direction: column;
     position: relative;
     list-style: none; }
-  .capsules-nav > ul > li {
+  .capsules-nav > ul button {
     background-color: tomato;
     width: 60px;
     height: 42px;
@@ -577,17 +577,17 @@ code {
     padding-left: 13px;
     transition: .4s all;
     margin-bottom: 2px; }
-    .capsules-nav > ul > li:hover {
+    .capsules-nav > ul button:hover {
       left: 0; }
-  .capsules-nav > ul > li:nth-child(2) {
+  .capsules-nav > ul li:nth-child(2) button {
     background-color: #b36e41; }
-  .capsules-nav > ul > li:nth-child(3) {
+  .capsules-nav > ul li:nth-child(3) button {
     background-color: #077567; }
-  .capsules-nav > ul > li:nth-child(4) {
+  .capsules-nav > ul li:nth-child(4) button {
     background-color: #6f35d3; }
-  .capsules-nav > ul > li:nth-child(5) {
+  .capsules-nav > ul li:nth-child(5) button {
     background-color: #7a5206; }
-  .capsules-nav > ul > li:nth-child(6) {
+  .capsules-nav > ul li:nth-child(6) button {
     background-color: #1b6177; }
 
 @keyframes showSideNav {

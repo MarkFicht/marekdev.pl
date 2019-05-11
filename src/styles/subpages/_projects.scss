@@ -203,7 +203,7 @@ $capsuleColors: (
         list-style: none;
     }
 
-    & > ul > li {
+    & > ul button {
         background-color: map-get($capsuleColors, c1);
         width: 60px;
         height: 42px;
@@ -222,11 +222,11 @@ $capsuleColors: (
         &:hover { left: 0; }
     }
 
-    & > ul > li:nth-child(2) { background-color: map-get($capsuleColors, c2); }
-    & > ul > li:nth-child(3) { background-color: map-get($capsuleColors, c3); }
-    & > ul > li:nth-child(4) { background-color: map-get($capsuleColors, c4); }
-    & > ul > li:nth-child(5) { background-color: map-get($capsuleColors, c5); }
-    & > ul > li:nth-child(6) { background-color: map-get($capsuleColors, c6); }
+    & > ul li:nth-child(2) button { background-color: map-get($capsuleColors, c2); }
+    & > ul li:nth-child(3) button { background-color: map-get($capsuleColors, c3); }
+    & > ul li:nth-child(4) button { background-color: map-get($capsuleColors, c4); }
+    & > ul li:nth-child(5) button { background-color: map-get($capsuleColors, c5); }
+    & > ul li:nth-child(6) button { background-color: map-get($capsuleColors, c6); }
 }
 
 @keyframes showSideNav {

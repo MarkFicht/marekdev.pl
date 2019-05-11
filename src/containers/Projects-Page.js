@@ -1,30 +1,41 @@
 import React, { Component } from 'react';
 
 import ReactLoading from 'react-loading';
-
+import animateScrollTo from 'animated-scroll-to'
+import { options, desiredOffset } from '../components/projects/animate-scroll/options'
+import styled from 'styled-components'
 
 class Projects extends Component {
 
     state = {
         loading: true,
+        active: false,
         positionY: null
     }
 
     componentDidMount = () => {
-        window.scroll(0, 0);
-        // let posY = document.querySelector('.grid-capsule-1').offsetTop
-        // console.log(posY)
+        window.scroll(0, 0)
 
         const loadingTime = setTimeout( () => {
 
             this.setState({ loading: false })
-            clearTimeout(loadingTime);
+            clearTimeout(loadingTime)
+
+            // var timerID = setInterval(function () {
+            //     if (window.pageYOffset <= 1500)
+            //         window.scrollBy(0, 5);
+
+            //     else
+            //         clearInterval(timerID);
+            // }, 1);
+
+            let random = Math.floor(Math.random() * (6 - 0)) + 0
+            animateScrollTo(desiredOffset[random], options)
         }, 500 );
     }
 
-    componentDidUpdate = () => {
-        
-    }
+    navScrollAnimation = param => animateScrollTo( desiredOffset[param], options )
+    
 
     render() {
 
@@ -42,16 +53,16 @@ class Projects extends Component {
                     <h3>Projekty</h3>
                 </header>
 
-                <sidebar className='capsules-nav'>
+                <nav className='capsules-nav'>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
+                        <li><button onClick={e => this.navScrollAnimation(0)}>1</button></li>
+                        <li><button onClick={e => this.navScrollAnimation(1)}>2</button></li>
+                        <li><button onClick={e => this.navScrollAnimation(2)}>3</button></li>
+                        <li><button onClick={e => this.navScrollAnimation(3)}>4</button></li>
+                        <li><button onClick={e => this.navScrollAnimation(4)}>5</button></li>
+                        <li><button onClick={e => this.navScrollAnimation(5)}>6</button></li>
                     </ul>
-                </sidebar>
+                </nav>
 
                 <section>
 
