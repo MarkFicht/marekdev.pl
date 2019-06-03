@@ -331,14 +331,14 @@ footer {
   &::before {
     content: '';
     position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    // top: 0;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
+    // top: -2px;
+    // bottom: -2px;
+    // left: -2px;
+    // right: -2px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     transform: skew(1.5deg, .7deg);
     // overflow: hidden;
   }
@@ -398,7 +398,7 @@ footer {
     z-index: 1;
     transform: translate(0, -50%);
     filter: drop-shadow(0 0 5px rgba(#000, .95));
-    transition: all .4s;
+    transition: all .6s;
     letter-spacing: 3px;
     display: flex;
     justify-content: center;
@@ -411,7 +411,8 @@ footer {
     padding: 0 15px 5px;
     opacity: 0;
     letter-spacing: 1px;
-    transition: all .4s;
+    transition: all .6s;
+    color: #fefefe;
   }
 
   & > .contact-link {
@@ -421,9 +422,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: map_get($colorSet1, c4);
+    color: #fefefe;
     opacity: 0;
-    transition: all .4s;
+    transition: all .6s;
 
     & > span {
       // border: 1px solid blue;
@@ -457,7 +458,7 @@ footer {
     text-transform: uppercase;
     position: absolute;
     bottom: 40%;
-    transition: all .4s;
+    transition: all .6s;
     overflow: hidden;
     letter-spacing: 1px;
     // display: flex;
@@ -493,7 +494,7 @@ footer {
     bottom: 12%;
     cursor: pointer;
   }
-  &:hover .pic-skew { opacity: 0; }
+  &:hover .pic-skew { opacity: .15; }
   &:hover > .contact-link { opacity: 1; z-index: 2; }
 }
 
@@ -531,7 +532,7 @@ footer {
   // opacity: .33;
   // opacity: .23;
   opacity: .63;
-  transition: all .4s;
+  transition: all .6s;
   transform: skew(1.5deg, .7deg);
   overflow: hidden;
 
